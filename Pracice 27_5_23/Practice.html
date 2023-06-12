@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Practice.css">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="icons8-favicon-96.png">
+    <script>
+        
+       function myPeragraph(){
+            document.getElementById('demo2').innerHTML='My experiment peragraph';
+            document.getElementById('demo2').style.color='red';
+            document.getElementById('demo2').style.fontSize='30px';
+            
+        }
+    </script>
+</head>
+<body>
+    <p id="demo">I am rifat Hossain</p>
+    <button onclick="document.getElementById('demo').innerHTML='My name is rifat',document.getElementById('demo').style.fontSize='30px';">Click this</button>
+    <p id="demo1" style="display:none">I am a Machine learning Engineer</p>
+    <button onclick="document.getElementById('demo1').style.display='block';"> click to show</button>
+    <p id="demo2"></p>
+    <button type="button" onclick="myPeragraph()"> Paragraph from function</button>
+    <button onclick="myPeragraph2()" style="text-align: center; color: blueviolet;font-size: medium;">External file load</button>
+    <p id="demo3" style="display: none; text-align: center;"></p>
+    <button onclick="printPage()">print this page</button>
+    <h3 style="text-align: center; font-size: medium;"> Output Done</h3>
+    <h2 id="demo4" style="text-align: center; color: burlywood;"></h2>
+    <script src="practice.js">
+    // js = output done, css =selector done (27_5_2023)  
+    // js = output done, css =selector done (2_6_2023)    
+    </script>
+</body>
+</html>
