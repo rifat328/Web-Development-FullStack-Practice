@@ -87,7 +87,7 @@ let CarName1='toyota',CarName2='volvo';
 var nName='rifat';
 var nName;
 let mName='rifat';
-// let mName; can not re declare wich let and const
+// let mName; can not re declare with let and const
 console.log(nName);
 let X=2+3+'5';
 let Y="5"+5+5;
@@ -95,6 +95,7 @@ console.log(X);
 console.log(Y);
 let MM=40;
 console.log(MM);
+//? below : block scope.
 {
     let MM=30;
     let y=500;
@@ -105,7 +106,7 @@ console.log(MM);
 }
 console.log(MM);
 
-/* If you want to learn more about hoisting, study the chapter JavaScript Hoisting.
+/*  JavaScript Hoisting.
 
 Variables defined with let are also hoisted to the top of the block, but not initialized.
 
@@ -283,3 +284,21 @@ console.log(person.fullName());
 
 //!--Objects Done, up next Events --> String Template ---------------------------------------------------------------------------
 
+function headChange(){
+    Document.getElementById('main_head').innerHTML="test data";
+    Document.getElementById('form_1').innerHTML.style.display="block";
+}
+
+//? Events :
+/* 
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+
+
+*/
+//? Event Handlers :can be used to handle and verify user input, user actions, and browser actions
+//! --> js strings and scape charecters
