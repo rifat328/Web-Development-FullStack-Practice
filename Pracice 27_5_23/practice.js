@@ -302,3 +302,91 @@ onload	The browser has finished loading the page
 */
 //? Event Handlers :can be used to handle and verify user input, user actions, and browser actions
 //! --> js strings and scape charecters
+let text="ABCDEFGH\"IJKL\"MNO\\PQRSTUVWXTYZ";
+console.log(text.length);
+console.log(text);
+console.log("hello \n dolly")
+console.log("hello \b dolly")
+console.log("hello \f dolly")
+console.log("hello \r dolly")
+console.log("hello \t dolly")
+console.log("hello \v dolly")
+
+//? string methods :
+//? extracting a string Part : 
+
+let text2= text.slice(2,7);
+let text3= text.substring(2,7);
+let text4= text.substr(2,7);
+console.log(text);
+console.log(text2);
+console.log(text3);
+console.log(text4);
+
+let text12 = "Please visit Microsoft!";
+let newText = text12.replace("Microsoft", "W3Schools");  // by default replace method is case sensitive
+console.log(newText);
+// to make replace method insencitive use regx in it . example:
+
+let text11="Please visit Microsoft!";
+let newText2=text11.replace(/MICROSOFT/i,"Rifat's den ");
+console.log(newText2);
+
+//? all the strings are imutable thay dont change the original string.
+
+let text13="Please visit Microsoft! and Microsoft! Microsoft! Microsoft ! ";
+let newText3=text13.replace(/MICROSOFT/ig,"Rifat's den ");
+console.log(newText3);
+//? trim method remove whitespaces ......................................................................
+let text10 = "      Hello World!      ";
+let text9 = text10.trim();
+
+/* 
+ECMAScript 2019 added the String method trimStart() to JavaScript.
+
+The trimStart() method works like trim(), but removes whitespace only from the start of a string.
+
+ECMAScript 2019 added the string method trimEnd() to JavaScript.
+
+The trimEnd() method works like trim(), but removes whitespace only from the end of a string.
+
+The padStart() method pads a string from the start
+let text = "5";
+let padded = text.padStart(4,"0");
+
+Pad a string with "x" until it reaches the length 4:
+
+let text = "5";
+let padded = text.padStart(4,"x");
+
+let text = "5";
+let padded = text.padEnd(4,"0");
+
+
+The charAt() method returns the character at a specified index (position) in a string:
+let text = "HELLO WORLD";
+let char = text.charAt(0);
+
+The charCodeAt() method returns the unicode of the character at a specified index in a string:
+
+The method returns a UTF-16 code (an integer between 0 and 65535).
+
+
+let text = "HELLO WORLD";
+let char = text.charCodeAt(0);
+
+ECMAScript 5 (2009) allows property access [ ] on strings:
+let text = "HELLO WORLD";
+let char = text[0];
+
+
+A string can be converted to an array with the split() method:
+
+Example
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+
+*/
+
+//! next --> JS String Search 
