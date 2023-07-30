@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { StatusComponent } from './status/status.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LogInComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

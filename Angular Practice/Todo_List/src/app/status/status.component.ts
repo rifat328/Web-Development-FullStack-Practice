@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
    </h2>
   `,
   styles: [
-    "h2{color:green}"
+    "h2{color:green;font-size:34px}"
   ]
 })
 export class StatusComponent {
