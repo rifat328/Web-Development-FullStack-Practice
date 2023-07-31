@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-status',
   template: `
    <h2>
-   status works!
+   404 Page Not found !!<br>
+   check Url properly!!
    </h2>
   `,
   styles: [
-    "h2{color:green;font-size:34px}"
+    "h2{color:red;font-size:50px}"
   ]
 })
 export class StatusComponent {
