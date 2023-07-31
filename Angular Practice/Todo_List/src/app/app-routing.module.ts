@@ -11,7 +11,8 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent,children:[
     {path:"add",component:AddcontactComponent},
     {path:"edit/:id",component:AddcontactComponent}]},
-    {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)}
+    {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+    {path:"log-in",loadComponent:()=>import('./log-in/log-in.component').then(opt=>opt.LogInComponent)}
 ];
 
 @NgModule({

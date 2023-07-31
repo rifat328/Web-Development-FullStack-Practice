@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
-import { LogInComponent } from './log-in/log-in.component';
+
 import { AddcontactComponent } from './addcontact/addcontact.component';
 
 
@@ -22,8 +22,8 @@ import { AddcontactComponent } from './addcontact/addcontact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    LogInComponent,
+    AppRoutingModule
+    //LogInComponent, lazy loading component
     // lazy loading of module AccessRoutingModule
     
   ],
