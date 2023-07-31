@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:"about",component:AboutComponent},
   {path:"contact",component:ContactComponent,children:[
     {path:"add",component:AddcontactComponent},
-    {path:"edit/:id",component:AddcontactComponent}]}
+    {path:"edit/:id",component:AddcontactComponent}]},
+    {path:"access",loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)}
 ];
 
 @NgModule({

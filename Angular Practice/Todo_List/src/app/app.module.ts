@@ -10,6 +10,7 @@ import { StatusComponent } from './status/status.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { AddcontactComponent } from './addcontact/addcontact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LogInComponent
+    LogInComponent,
+    // lazy loading of module AccessRoutingModule
     
   ],
   providers: [],
