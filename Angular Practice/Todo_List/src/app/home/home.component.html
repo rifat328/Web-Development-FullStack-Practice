@@ -1,1 +1,6 @@
 <h2>Welcome To Opulent Vibe Cosmetic Shop</h2>
+<h2>{{name | uppercase}}</h2><br>
+<h2>I do earn more then {{salary|currency:'USD'}} or avg {{yearly|currency:'BDT'}} </h2>
+<button (click)="clickFunction()">Click Here</button>
+<br>
+<input #txt (change)='clickFunctionA(txt.value)'>
