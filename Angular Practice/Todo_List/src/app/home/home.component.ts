@@ -14,6 +14,7 @@ export class HomeComponent {
   textAllign='center'
   isDisable=true;
   companyName="companyName"
+   colors = ['Green','Red','Yellow','Blue','black','Megenta']
   inputStyle={ 'text-align': 'center',
     'font-size': '35px',
     'color': 'rgb(183, 126, 237)',

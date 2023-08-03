@@ -13,4 +13,13 @@
 <br>
 <br>
 <input [(ngModel)]="name">
+
+<br><br>
+<h2 *ngIf="salary>0">{{salary}}</h2>
+
+
+<br><br>
+<ul>
+    <li *ngFor="let item of colors">{{item}}</li>
+</ul>
 </div>
