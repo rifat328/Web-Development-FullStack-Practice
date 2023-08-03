@@ -7,3 +7,10 @@
     text-align: center;
     
 }
+
+.companyName{
+    text-align: center;
+    font-size: 35px;
+    color: rgb(183, 126, 237);
+    shape-outside: margin-box;
+}

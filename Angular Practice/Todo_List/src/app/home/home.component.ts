@@ -13,6 +13,14 @@ export class HomeComponent {
   fontSize='40px'
   textAllign='center'
   isDisable=true;
+  companyName="companyName"
+  inputStyle={ 'text-align': 'center',
+    'font-size': '35px',
+    'color': 'rgb(183, 126, 237)',
+    'shape-outside': 'margin-box',
+    
+  }
+
   PropertyBinding="PropertyBinding"
   clickFunction(){
     alert(this.name +' \n Salary:'+ this.salary+ '\nyearly Salary:'+this.yearly);
