@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
 
 import { AddcontactComponent } from './addcontact/addcontact.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AddcontactComponent } from './addcontact/addcontact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
     //LogInComponent, lazy loading component
     // lazy loading of module AccessRoutingModule
     

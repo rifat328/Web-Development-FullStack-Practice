@@ -1,6 +1,16 @@
-<h2>Welcome To Opulent Vibe Cosmetic Shop</h2>
-<h2>{{name | uppercase}}</h2><br>
-<h2>I do earn more then {{salary|currency:'USD'}} or avg {{yearly|currency:'BDT'}} </h2>
-<button (click)="clickFunction()">Click Here</button>
+<h2 [style.textAlign]="textAllign">Welcome To Opulent Vibe Cosmetic Shop</h2>
+<h2 class="name" [style.textAlign]="textAllign">{{name | uppercase}}</h2><br>
+<h2 [style.color]="salColor" [style.font-size]="fontSize" [style.textAlign]="textAllign" >I do earn more then {{salary|currency:'USD'}} or avg {{yearly|currency:'BDT'}} </h2>
+
+<div class="input">
+
+    <button (click)="clickFunction()">Click Here</button>
 <br>
-<input #txt (change)='clickFunctionA(txt.value)'>
+<input  #txt (change)='clickFunctionA(txt.value)'>
+<br>
+<br>
+<input [value]="PropertyBinding" [disabled]="isDisable" #text (change)="clickFunctionA(text.value)">
+<br>
+<br>
+<input [(ngModel)]="name">
+</div>

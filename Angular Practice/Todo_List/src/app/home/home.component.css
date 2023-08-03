@@ -1,0 +1,9 @@
+.name:hover{
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: color-mix(in srgb,red 20, blue 30,green 50);
+}
+.input{
+    text-align: center;
+    
+}
