@@ -1,0 +1,17 @@
+*{
+    font-family: monospace;
+}
+h1,h2{
+    color: blue;
+    font-size: 64px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ h3{
+    background-color: rgb(237, 237, 237);
+    font-size: 24px;
+    color: blueviolet;
+}
+.heighlight{
+    color: rgb(225, 225, 20);
+    background-color: brown;
+}
