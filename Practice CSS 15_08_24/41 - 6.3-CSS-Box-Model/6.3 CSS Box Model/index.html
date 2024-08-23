@@ -6,14 +6,48 @@
   <title>CSS Box Model</title>
   <style>
     /* Write your CSS code here */
+    .box1,.box2,.box3{
+      height: 200px;
+      width: 200px;
+    }
+    .box1{
+      background-color: cadetblue;
+      border: 10px solid black;
+      margin: 0px;
+      padding: 20px;
+      p{
+        margin: 0px;
 
-  </style>
+      }
+    }
+    .box2{
+      background-color: gold;
+      border: solid black;
+      border-width: 20px 10px;
+      margin-left: 260px;
+    }
+    .box3{
+      background-color: indianred;
+      border: 10px solid black;
+      margin-left: 40px;
+    }
+</style>
 </head>
 
 <body>
+  <div class="box1">
+    <p>    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sapien porttitor urna elementum lacinia. In
+      id magna pulvinar, ultricies lorem id, vehicula elit. Aliquam eu luctus nisl, vitae pellentesque magna. Phasellus
+      dolor metus, laoreet ac convallis sit amet, efficitur sed dolor.
+    </p>
+  </div>
+  <div class="box2">
 
+  </div>
+  <div class="box3">
 
-  <!-- TODOs:
+  </div>
+<!-- TODOs:
 1. Create 3 Boxes using the div element.
 2. Set their sizes to 200px heigh by 200px wide.
 3. Set different background colors for each of the boxes (I used cadetblue, gold and indianred).
