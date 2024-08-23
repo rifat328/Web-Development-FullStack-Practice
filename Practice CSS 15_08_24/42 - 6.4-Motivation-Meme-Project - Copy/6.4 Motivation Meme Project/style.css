@@ -1,0 +1,33 @@
+*{
+    background-color: black;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.webTitle h1{
+    
+    text-align: center;
+    color: red;
+    font-family: "Matemasie", system-ui;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+
+.meme1{
+    color: whitesmoke;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    h1{
+        text-transform:uppercase ;
+    }
+    img{
+        border: 5px solid white ;
+        width: 100%;
+    }
+}
+    
+
