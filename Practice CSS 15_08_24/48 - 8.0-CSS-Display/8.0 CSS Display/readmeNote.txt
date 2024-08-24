@@ -5,7 +5,7 @@ CSS Display has 3 type of property:
 
 2 inline : rule1 -cant set width and height of the element( default to size of the content)
 
-3 inline-block : inline allows us to go Elements onto same line and block allows us to set 
+3 inline-block : inline allows us to place Elements onto same line and block part allows us to set 
     height & width
 
 4 none: hides an element

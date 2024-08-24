@@ -16,10 +16,27 @@ Positioning
     top:  50px;
 
     it will push that element from left and top 50px, compare to static Position,
-    thats why its called Relative Positioning.
+    thats why its called Relative Positioning. or relative to supposate location.
     
-3.Absolute :rule1: Position relative to nearest Positioned ancestor,
+3.Absolute :rule1: Position relative to nearest Positioned ancestor which has Position set to relative
+            ,and this child to Absolute
+            example: div1= parent 
+                        { 
+                            div2= child
+                            {
+
+                            }
+                        }
+                    CSS style: 
+                        div1{
+                            Position:relative;
+                        }
+                        div2{
+                            Position:Absolute;
+                        }
+            #* If rule1 dosen't happen rule2 gets applied. 
         rule 2 : if rule1 dosent have then top left corner of webpage.
+        
     Z-index: determines which one comes top of between eachother ,if we have 
         x as width that goes left and y As height that goes bottom to top ,
         then another direction or dimension is z .
