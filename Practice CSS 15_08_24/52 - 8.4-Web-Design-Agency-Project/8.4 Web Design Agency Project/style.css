@@ -17,7 +17,7 @@ body {
 footer {
   text-align: right;
   color: midnightblue;
-  clear: both;
+
 }
 h1 {
   font-size: 5rem;
@@ -25,32 +25,27 @@ h1 {
 
 .main h1 span{
   color:midnightblue ;
-
 }
+/* 
 .main h1{
-  
   width: 89vw;
 }
-.main.logo{
-  display: block;
-  position: fixed;
+*/
+.card{
+  width: 45%;
+  
 }
 
 .title-image{
-  
-  float: left; 
-  width: 10%; 
-  height: 100px;
-}
-.card{
-  display: inline-block;
-  width: 40%;
+  float: left;
+  height: 200px;
+  margin-right: 50px;
 }
 
 .left{
   float: left;
 }
-.rigt{
+.right{
   float: right;
 }
 
