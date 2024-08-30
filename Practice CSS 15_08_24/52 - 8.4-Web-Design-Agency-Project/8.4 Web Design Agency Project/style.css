@@ -14,13 +14,49 @@ body {
 .main {
   flex: 1;
 }
+.main h1 span{
+  color:midnightblue ;
 
+}
+.main h1{
+  
+  width: 89vw;
+}
+.main.logo{
+  display: block;
+  position: fixed;
+}
 h1 {
   font-size: 5rem;
 }
+.title-image{
+  
+  float: left; 
+  width: 10%; 
+  height: 10%;
+}
+.card{
+  display: inline-block;
+  width: 40%;
+}
+h2.card-title{
 
+}
+.left{
+  float: left;
+}
+.rigt{
+  float: right;
+}
 footer {
   text-align: right;
   color: midnightblue;
+  clear: both;
+}
+/* responsiveness mobile */
+
+@media (max-width:600px) {
+
+  
 }
 
