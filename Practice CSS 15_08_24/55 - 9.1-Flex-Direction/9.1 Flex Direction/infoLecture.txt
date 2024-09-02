@@ -1,0 +1,79 @@
+flex:
+    to activate display:flex
+        by default(flex-direction:row)
+        but we can change it to column
+        flex-direction:column;
+
+    if flex is row then
+        main axix is left to right horizontal
+            and cross-axis is top to bottom vertical column
+    if flex is column
+        main axis is  top to bottom vertical column
+            cross-axis is left to right horizontal
+
+display: inline-flex: will ocupy as much as needed insted of entire block
+
+    flex-basis: Perform on main axix , 
+
+    if main axis is row then flex-basis is width,
+    if main axis is column then flex-basis is height.
+    this property is intendent for children.
+
+
+
+
+
+
+Combinators:
+
+Next-sibling combinator
+    The next-sibling combinator (+) is placed between two CSS selectors. 
+    It matches only those elements matched by the second selector that are 
+    the next sibling element of the first selector. For example, to select all <img> elements 
+    that are immediately preceded by a <p> element:
+
+    p + img
+    A common use case is to do something with a paragraph that follows a heading,
+    as in the example below. In that example, we are looking for any paragraph which 
+    shares a parent element with an <h1>, and immediately follows that <h1>.
+
+    If you insert some other element such as a <h2> in between the <h1> and the <p>,
+     you will find that the paragraph is no longer matched by the selector and so does 
+    not get the background and foreground color applied when the element is adjacent.
+
+Subsequent-sibling combinator
+    If you want to select siblings of an element even if they are not directly adjacent,
+    then you can use the subsequent-sibling combinator (~).
+    To select all <img> elements that come anywhere after <p> elements, we'd do this:
+    p ~ img
+    In the example below we are selecting all <p> elements that come after the <h1>,
+    and even though there is a <div> in the document as well,
+    the <p> that comes after it is selected.
+--------------------------------------------------
+Creating complex selectors with nesting
+    p {
+  ~ img {
+  }
+}
+/* This is parsed by the browser as */
+p ~ img {
+}
+--------------------------------------------------
+p {
+  & img {
+  }
+}
+/* This is parsed by the browser as */
+p img {
+}
+-------------------------------------------------
+Using combinators
+You can combine any of the selectors that we discovered in previous lessons with
+ combinators in order to pick out part of your document.
+  For example, to select list items with a class of "a" which are direct children of a <ul>,
+try the following:
+
+css
+
+ul > li[class="a"] {
+}
