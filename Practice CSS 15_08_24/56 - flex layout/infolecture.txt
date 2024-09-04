@@ -1,3 +1,19 @@
+  child property or parent property 
+       child property-> order: 0(by default)
+            order: 1 or higher will make it to the end.
+            0  0 0 0 0 0 1 2 3 10 etc.
+    
+  parent property->      flex-wrap :nowrap(default)
+        justify-content: work on main axis
+                    [flex-start,flex-end,center,space-between,space-around,space-evenly]
+        align-items:set or work the distribution along the cross axis
+                   to make it work we have to set our container bigger. like 70vh: viewport height -set height of the window we are viewing.
+                    [flex-start,flex-end,center,Baseline,Stratch]
+
+children    indipendent item target--> align-self
+    align-content: similler to align-items but only works when flex-wrap is set to wrap
+    
+
 flexbox cheatsheet guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
     example Content:
                     https://appbrewery.github.io/flex-layout/
