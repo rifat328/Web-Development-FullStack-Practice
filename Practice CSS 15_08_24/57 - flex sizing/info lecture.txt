@@ -1,0 +1,47 @@
+
+flexbox sizing works by looking at priority of an element
+    content width < width < flex-basis < min-width/max-width
+    -------------> -------> ---------->  --------->
+    *if flex-basis is smaller then max-width then flexbox will respect felx-basis 
+    but if flex-besis is larger then max width will implimented until it can 
+
+    *mix-width: determines the growth potential
+    *min-width: determines shrink potential
+
+    min-width: looks at longest possible word
+    max-width: looks at max possible line
+
+    flex-grow/flex-shrink: potential can eneble that priority to grow or shrink 1=yes ,0=no
+
+flex: 1 1 0 = gorw-on shrink-on flex-basis=auto;
+  
+
+    https://appbrewery.github.io/flexbox-sizing-exercise/
+
+        /* Write your CSS code below to make the blue items size, grow and shrink like the green ones.*/
+
+.container {
+  display:flex;
+ justify-content:space-between;
+}
+  
+.container > * {
+flex-basis:200px;
+}
+
+.item1 {
+flex-grow:1;
+flex-shrink:1;
+max-width:200px;
+
+}
+
+.item2 {
+flex-shrink:0;
+}
+
+.item3 {
+flex-basis:400px;
+flex:0 0 1;
+}
+
