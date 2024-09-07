@@ -10,10 +10,72 @@
     body {
       font-family: 'Sono', sans-serif;
     }
+    .pricing-container{
+      display: flex;
+      gap: 20px;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+
+    .pricing-plan{
+      width: 25%;
+      height: auto;
+      background-color: rgb(247, 246, 246);
+      border-radius: 10px;
+      text-align: center;
+      padding-bottom: 20px;
+      flex-shrink: 0;
+      
+      .plan-title{
+        font-size: 1.5rem;
+        padding-top:10px ;
+        
+        font-weight: bold;
+      }
+      .plan-price{
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      li{
+        list-style: none;
+      }
+      
+      
+    }
+    .plan-features{
+      align-items: center;
+    }
+    .plan-button{
+      border-radius: 5px;
+      border-width: 0px;
+      margin: 2%;
+      text-align: center;
+      color: whitesmoke;
+      background-color: #ff6600;
+      padding: 8px 16px;
+      font-weight: bold;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  transition: box-shadow 0.3s ease; /* Adds smooth transition */
+    }
+    .plan-button:hover{
+      background-color: #f98f49;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+    }
 
     /* Hint: What can you do with a media query and flexbox? */
     @media (max-width: 1250px) {
-      
+      .pricing-container{
+        flex-flow: column nowrap;
+        flex-shrink: 0;
+      }
+      .pricing-plan{
+        
+        flex-shrink: 0;
+        
+      }
     }
   </style>
 </head>
@@ -22,7 +84,7 @@
   <div class="pricing-container">
     <div class="pricing-plan">
       <div class="plan-title">Basic</div>
-      <div class="plan-price">$9.99/month</div>
+      <div class="plan-price">$11.99/month</div>
       <ul class="plan-features">
         <li>✅ 10GB Storage</li>
         <li>✅ 1 User</li>

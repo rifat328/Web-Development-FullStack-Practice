@@ -14,8 +14,10 @@ flexbox sizing works by looking at priority of an element
     flex-grow/flex-shrink: potential can eneble that priority to grow or shrink 1=yes ,0=no
 
 flex: 1 1 0 = gorw-on shrink-on flex-basis=auto;
-  
-
+ now : flex:1 , flex:2, flex:3  on items give that ration 
+       grow 1   grow 2   grow 3
+       shrink 1 shrink 2 shrink 3
+       
     https://appbrewery.github.io/flexbox-sizing-exercise/
 
         /* Write your CSS code below to make the blue items size, grow and shrink like the green ones.*/
