@@ -12,7 +12,7 @@
     }
     .pricing-container{
       display: flex;
-      gap: 20px;
+      gap: 2rem;
       height: 100vh;
       justify-content: center;
       align-items: center;
@@ -21,40 +21,40 @@
     }
 
     .pricing-plan{
-      width: 25%;
-      height: auto;
+      flex:1;
+      max-width: 400px;
       background-color: rgb(247, 246, 246);
-      border-radius: 10px;
+      border-radius: 5px;
       text-align: center;
       padding-bottom: 20px;
-      flex-shrink: 0;
+      
       
       .plan-title{
-        font-size: 1.5rem;
-        padding-top:10px ;
-        
-        font-weight: bold;
+        font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
       }
       .plan-price{
-        font-weight: bold;
-        font-size: 2rem;
+        font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
       }
-      li{
-        list-style: none;
-      }
+
       
       
     }
     .plan-features{
-      align-items: center;
+        list-style: none;
       padding: 0;
       margin: 0;
+      li{
+        margin-bottom: 20px;
+      }
     }
     .plan-button{
       border-radius: 5px;
-      border-width: 0px;
-      margin: 2%;
-      text-align: center;
+      border: none;
+
       color: whitesmoke;
       background-color: #ff6600;
       padding: 8px 16px;
@@ -72,7 +72,7 @@
     @media (max-width: 1250px) {
       .pricing-container{
         flex-flow: column nowrap;
-        flex-shrink: 0;
+        height: 100%;
       }
       .pricing-plan{
         
