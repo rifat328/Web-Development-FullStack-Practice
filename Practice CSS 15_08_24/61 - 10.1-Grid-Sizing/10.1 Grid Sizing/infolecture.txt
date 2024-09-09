@@ -1,0 +1,16 @@
+fixed sizing : 1rem or 2rem is relative to root size which is not responsive.
+    grid-template-row: 100px 200px;
+    grid-template-column: 400px 800px;
+    can also bw written as : row / column;
+            grid-template: 100px 200px / 400px 800px;
+    
+    another kinda responsive way is using auto but it behave differently 
+    on row and column
+        grid-template-row: 100px auto;
+            first div will 100px height, but 2nd div will take content fit height.
+        grid-template-column: 200px auto;
+            first div will take 100px width but 2nd div will take all available width left;
+        
+    demo example: appbrewery.github.io/grid-sizing/
+    
+
