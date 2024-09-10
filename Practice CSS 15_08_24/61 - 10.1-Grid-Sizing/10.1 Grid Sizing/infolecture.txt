@@ -13,4 +13,12 @@ fixed sizing : 1rem or 2rem is relative to root size which is not responsive.
         
     demo example: appbrewery.github.io/grid-sizing/
     
+test practice code: 
+/* Write your CSS code below to make the purple items size, grow and shrink like the green ones.*/
 
+.grid-container {
+ display:grid;
+ grid-template:repeat(2,1fr) 2fr / auto 400px minmax(200px,500px);
+ grid-auto-rows:50px;
+}
+  
