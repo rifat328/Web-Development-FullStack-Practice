@@ -73,6 +73,31 @@
 		}
 
 		/* Air */
+		/* css for youtube embaded video.
+		> add embaded video copy code from any youtube video you can find it when you try to share 
+		*/
+		#media iframe{
+			
+			border-radius: 5%;
+			object-fit: cover;
+			border:0.1rem solid rgb(114, 32, 114)
+
+		}
+		#media video{
+			width: 650px;
+			height: 350px;
+			border:0.1rem solid rgb(114, 32, 114);
+			border-radius: 5%;
+			object-fit: cover;
+			box-shadow:10px 8px 16px rgb(114, 32, 114);/* Adds shadow */
+			 
+			transition: box-shadow 0.3s ease; /* Adds smooth transition */
+			
+			
+		}
+		#media video:hover{
+			box-shadow: 20px 32px 20px rgb(114, 32, 114);
+		}
 	</style>
 </head>
 <body>
@@ -99,10 +124,12 @@
 
 		<div id="media">
 			<!-- Air -->
-			 <!-- embading <video src=""></video> -->
-			 <iframe width="560" height="315" src="https://www.youtube.com/embed/jgw82b5Y2MU?si=lq7PmRQOj6uVFYZe" 
+			<video src="./videos/video-1@c.mp4" controls muted loop poster="./images/gallery-6.jpg">video not supported</video> 
+			<!-- exercise1 -->
+			 <!-- > add embaded video copy code from any youtube video you can find it when you try to share -->
+			 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/jgw82b5Y2MU?si=lq7PmRQOj6uVFYZe" 
 			 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-			 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 		</div>
 	</section>
 </body>
