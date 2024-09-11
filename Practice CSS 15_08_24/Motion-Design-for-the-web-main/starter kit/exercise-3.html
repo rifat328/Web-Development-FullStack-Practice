@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #3 || Website header</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		html {
+			font-size: 16px;
+			font-family: 'Figtree', sans-serif;
+			line-height: 1.5;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 80%;
+			margin: 3rem auto;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		nav ul a {
+			text-decoration: none;
+			color: #151618;
+		}
+
+		.btn {
+			color: white;
+			background-color: #6E32EF;
+			display: inline-block;
+			padding: .75rem 1.5rem;
+			border-radius: .5rem;
+			border: 1px solid #6E32EF;
+		}
+
+		/* Air */
+	</style>
+</head>
+<body>
+	<header>
+		<a href="/"><img src="images/logo-l4.svg" alt="Logo"></a>
+
+		<nav>
+			<ul>
+				<li><a href="#">Work</a></li>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#" class="btn">Get a Quote</a></li>
+			</ul>
+		</nav>
+	</header>
+</body>
+</html>

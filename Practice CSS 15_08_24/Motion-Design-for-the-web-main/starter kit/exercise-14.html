@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #14 || Animated avatars</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--default-shadow: 4px 4px 2px rgba(0, 0, 0, 0.16);
+			--orange: #F2762E;
+			--yellow: #F2B705;
+			--red: #BF0404;
+			--off-white: #E5C6B4;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Luckiest Guy', cursive;
+			line-height: 1.5;
+		}
+
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+		}
+
+		h1 {
+			font-size: 3.1875rem;
+			color: var(--yellow);
+			-webkit-text-stroke: 1px var(--orange);
+		}
+
+		h2 {
+			font-size: 2.375rem;
+			color: var(--orange);
+			-webkit-text-stroke: 1px var(--red);
+			transition: all .2s ease-in-out;
+		}
+
+		h3,
+		button {
+			font-size: 1.3125rem;
+			color: #FFF;
+			letter-spacing: 0.84px;
+			-webkit-text-stroke: 1px var(--red);
+		}
+
+		body {
+			background: url(images/svg-pattern-topography.svg), linear-gradient(45deg, #0468BF 0%, #3299F3 100%);
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding-bottom: 4rem;
+		}
+
+		hgroup {
+			background-color: #022543;
+			box-shadow: var(--default-shadow);
+			border-radius: 0 0 4rem 4rem;
+			text-align: center;
+			padding: 3rem 6rem;
+		}
+
+		button {
+			padding: 1.45rem 2.5rem 1rem;
+			border: 1px solid var(--yellow);
+			background-color: var(--orange);
+			border-radius: 1rem;
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			box-shadow: var(--default-shadow);
+			transition: all .2s ease-in-out;
+			cursor: pointer;
+		}
+
+		button svg {
+			fill: white;
+			stroke: var(--red);
+			transition: all .2s ease-in-out;
+		}
+
+		button[disabled] {
+			background-color: var(--off-white);
+			border-color: var(--off-white);
+			color: rgba(255, 255, 255, .32);
+			-webkit-text-stroke: 1px rgba(191, 4, 4, 0.32);
+			cursor: not-allowed;
+		}
+
+		button:not([disabled]):hover {
+			gap: 2rem;
+		}
+
+		button[disabled] svg {
+			stroke: rgba(191, 4, 4, 0.32);
+			fill: var(--off-white);
+		}
+
+		.card-container {
+			display: flex;
+			gap: 2em;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.card {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			border-radius: 2rem;
+			padding: 2.5rem 1.5rem 0;
+			box-shadow: var(--default-shadow);
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+			border: 1px solid transparent;
+		}
+
+		.card:hover {
+			transform: scale(1.1);
+		}
+
+		.card figure {
+			transition: transform .2s ease-in-out;
+			margin: 0;
+		}
+
+		.card.selected {
+			background: var(--orange);
+			border-color: var(--yellow);
+			transform: scale(1.1);
+		}
+
+		.card.selected h2 {
+			color: white;
+		}
+
+		/* Air */
+		/* You can download the walking sequences you saw in the video using the links below */
+		/* - https://elements.envato.com/animation-of-girl-walking-S4WXEK8 */
+		/* - https://elements.envato.com/animation-of-boy-walking-7H3QTE3 */
+		/* - https://elements.envato.com/animation-of-zombie-walking-9QDTDMW */
+		/* - https://elements.envato.com/animation-of-skeleton-walking-SK7SQUJ */
+	</style>
+</head>
+<body>
+	<hgroup>
+		<h3>Step 1</h3>
+		<h1>Choose your adventurer</h1>
+	</hgroup>
+
+	<div class="card-container">
+		<div class="card">
+			<h2>Luna</h2>
+			<figure id="luna"></figure>
+		</div>
+		<div class="card">
+			<h2>Max</h2>
+			<figure id="max"></figure>
+		</div>
+		<div class="card">
+			<h2>Zombo</h2>
+			<figure id="zombo"></figure>
+		</div>
+		<div class="card">
+			<h2>Ribsy</h2>
+			<figure id="ribsy"></figure>
+		</div>
+	</div>
+
+	<button id="the-button" disabled>
+		Change appearance
+
+		<svg width="38" height="18" viewBox="0 0 38 18">
+			<path d="M27.1002 7.00512C26.5766 7.00511 26.0534 7.00532 25.5312 7.00588C20.9264 7.01085 16.3224 7.06693 11.7312 7.12286L11.7294 7.12289L11.1542 7.12989C9.29112 7.15255 7.3071 7.18158 5.32536 7.43462C5.20851 7.44954 5.05658 7.46596 4.87901 7.48512L4.87208 7.48587C4.51723 7.52417 4.07081 7.57234 3.68539 7.63539C3.07004 7.73604 2.28591 7.91487 1.56808 8.32873C0.691141 8.83432 0.390108 9.95508 0.895698 10.832C1.40129 11.7089 2.52205 12.01 3.39898 11.5044C3.54491 11.4203 3.8129 11.3289 4.27712 11.253C4.57706 11.2039 4.83797 11.1763 5.13727 11.1449L5.13882 11.1447C5.33516 11.124 5.54728 11.1017 5.78965 11.0708C7.53187 10.8483 9.31289 10.8182 11.1988 10.7953L11.7691 10.7883C16.3658 10.7323 20.9515 10.6765 25.5351 10.6715C26.547 10.6704 27.5555 10.6707 28.564 10.6712C28.1575 10.8866 27.7603 11.0957 27.3717 11.2942C26.1023 11.9427 24.8225 12.5622 23.5217 13.1919C23.3785 13.2612 23.2132 13.3298 23.0225 13.409L23.0009 13.418C22.8068 13.4985 22.591 13.5886 22.3804 13.6908C21.9716 13.8891 21.5055 14.1678 21.2162 14.6054C21.177 14.6647 21.0616 14.8422 20.9832 15.0944C20.9376 15.2409 20.6745 16.152 21.4126 16.9201C22.0485 17.5819 22.8427 17.4868 22.9567 17.4732L22.9572 17.4731L22.9575 17.4731L22.9601 17.4728C22.9602 17.4728 22.9603 17.4728 22.9604 17.4728C23.1809 17.4468 23.348 17.3863 23.4098 17.3631C23.7283 17.2439 24.0324 17.0826 24.3096 16.9288C24.3767 16.8915 24.4419 16.855 24.5055 16.8193C24.7146 16.7019 24.9074 16.5937 25.1032 16.4989L25.1061 16.4975C26.4087 15.867 27.7316 15.2266 29.0393 14.5586C29.6197 14.2621 30.179 13.9653 30.7238 13.6762L30.7255 13.6753C32.066 12.9639 33.3171 12.3004 34.6465 11.7597L34.4655 11.3149L34.6465 11.7597C34.6912 11.7415 34.738 11.7227 34.7877 11.7028L34.6075 11.2542L34.7877 11.7028L34.802 11.697C35.2725 11.5081 35.9507 11.2357 36.5842 10.7542C37.1355 10.3351 37.3786 9.70416 37.3525 9.11228C37.3318 8.64098 37.1489 8.28822 37.0533 8.1234C36.8517 7.77627 36.5708 7.48966 36.3796 7.30696C35.9561 6.90223 35.3788 6.45797 34.8446 6.06973C33.8828 5.3707 32.8311 4.68966 32.4842 4.465L32.4829 4.46416C32.436 4.43381 32.4042 4.41315 32.3864 4.4015C30.6265 3.24572 28.6015 1.98451 26.2989 1.28945C26.1715 1.25099 25.6697 1.12133 25.2425 1.03314C25.0578 0.994994 24.7442 0.933329 24.4691 0.921451C24.394 0.91821 24.2501 0.914754 24.0798 0.937497C23.9934 0.949028 23.8517 0.973406 23.6864 1.03211C23.5351 1.08589 23.2442 1.21 22.9729 1.48871L23.3312 1.83748L22.9729 1.48871C22.6586 1.81156 22.4427 2.27296 22.4488 2.79958C22.4541 3.25975 22.6271 3.59592 22.7325 3.7646C22.9268 4.07553 23.1695 4.25552 23.2364 4.3051L23.2372 4.30574C24.4941 5.23796 25.7901 6.13645 27.1002 7.00512Z"/>
+		</svg>
+	</button>
+
+	<script>
+		const cards = document.querySelectorAll('.card')
+		const theButton = document.querySelector('#the-button')
+
+		cards.forEach(card => {
+			card.addEventListener('click', () => {
+				// Disable the button
+				theButton.setAttribute('disabled', 'true')
+
+				// Remove the selected class from all cards
+				cards.forEach(cardSec => {
+					cardSec.classList.remove('selected')
+				})
+
+				// Add the selected class to the card we clicked on
+				card.classList.add('selected')
+
+				theButton.removeAttribute('disabled')
+			})
+		})
+	</script>
+</body>
+</html>

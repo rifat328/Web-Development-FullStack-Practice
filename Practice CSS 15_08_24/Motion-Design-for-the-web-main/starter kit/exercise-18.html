@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #18 || Scroll-triggered animation</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--white: #fff;
+			--white-50: rgba(255, 255, 255, .5);
+			--white-20: rgba(255, 255, 255, .2);
+			--white-5: rgba(255, 255, 255, .05);
+			--accent: #BF4700;
+			--gray: #0E0E0E;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Manrope', sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			background-color: var(--gray);
+			font-size: 1.125rem;
+		}
+
+		p {
+			color: var(--white);
+		}
+
+		h1,
+		h2,
+		h4 {
+			font-family: 'Poppins', sans-serif;
+			color: var(--white);
+			font-weight: 700;
+		}
+
+		h1 {
+			font-size: 5.6875rem;
+			line-height: 1.2;
+			letter-spacing: -0.39813rem;
+			margin: 0 0 4rem;
+		}
+
+		h2 {
+			font-size: 3.75rem;
+			line-height: 1.4;
+			letter-spacing: -0.1875rem;
+			margin: 0 0 4rem;
+		}
+
+		h3 {
+			color: var(--white-50);
+			font-size: 1.6875rem;
+			font-weight: 300;
+			margin: 0 0 4rem;
+		}
+
+		h4 {
+			font-size: 1.6875rem;
+			letter-spacing: -0.08438rem;
+			margin: 0;
+		}
+
+		h6 {
+			color: var(--white-50);
+			font-size: 1.125rem;
+			font-weight: 300;
+			margin: 0 0 1rem;
+		}
+
+		section,
+		footer {
+			min-height: 100dvh;
+		}
+
+		#hero,
+		footer {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+			padding-block: 4rem;
+		}
+
+		header {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-inline: 4rem;
+		}
+
+		header nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+		}
+
+		li a {
+			text-decoration: none;
+			color: var(--white-50);
+			transition: color .2s ease-in-out;
+		}
+
+		li a:hover {
+			color: var(--white);
+		}
+
+		.hero__content,
+		.footer__content {
+			max-width: 64%;
+		}
+
+		.social-links {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		.social-links a {
+			color: var(--white);
+			font-weight: 700;
+			transition: .2s ease-in-out;
+			display: inline-block;
+			padding: 0 1rem;
+		}
+
+		.social-links a:hover {
+			color: var(--accent);
+		}
+
+		.social-links li {
+			display: flex;
+			align-items: center;
+		}
+
+		.social-links li:not(:last-child)::after {
+			content: '';
+			height: 1px;
+			width: 1.5rem;
+			display: inline-block;
+			background-color: var(--white-20);
+		}
+
+		#scroll-icon rect,
+		#scroll-icon path {
+			stroke: var(--accent);
+		}
+
+		.btn {
+			appearance: none;
+			border: none;
+			background: transparent;
+			color: var(--accent);
+			display: inline-flex;
+			align-items: center;
+			gap: 1rem;
+			transition: gap .2s ease-in-out;
+			cursor: pointer;
+			padding: 1rem 2rem;
+		}
+
+		.btn svg path {
+			stroke: var(--accent);
+		}
+
+		.btn:hover {
+			gap: 2rem;
+		}
+
+		.btn + .social-links {
+			margin-top: 8rem;
+		}
+
+		h6 span {
+			display: inline-block;
+			width: 1.5rem;
+			height: 1px;
+			vertical-align: middle;
+			background-color: var(--white-20);
+			margin-inline: .5rem;
+		}
+
+		#portfolio {
+			padding-block: 8rem;
+		}
+
+		.entry {
+			display: grid;
+			grid-template-columns: .6fr 1.4fr;
+			align-items: center;
+			gap: 4rem;
+			margin-inline: 4rem;
+			margin-bottom: 6rem;
+		}
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+
+		.entry figure {
+			margin: 0;
+			padding: 6rem;
+			background-color: var(--white-5);
+			display: flex;
+			justify-content: center;
+		}
+
+		/* Air */
+	</style>
+</head>
+<body>
+	<section id="hero">
+		<header>
+			<a href="/"><img src="images/logo-illustrator.svg" alt="logo-illustrator"></a>
+			<nav>
+				<ul>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="hero__content">
+			<h1>Illustration is my passion</h1>
+			<h3>I'm a US-based illustrator and I love working with passionate people from all around the world.</h3>
+			<ul class="social-links">
+				<li><a href="#">FB</a></li>
+				<li><a href="#">IG</a></li>
+				<li><a href="#">LI</a></li>
+				<li><a href="#">X</a></li>
+				<li><a href="#">YT</a></li>
+			</ul>
+		</div>
+
+		<svg width="40" height="56" viewBox="0 0 40 56" fill="none" id="scroll-icon">
+			<rect x="0.5" y="0.5" width="39" height="55" rx="19.5" stroke="white"/>
+			<path d="M20 37V19M24 33L20 37L24 33ZM20 37L16 33L20 37Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</section>
+
+	<section id="portfolio">
+		<div class="entry">
+			<div class="entry__meta">
+				<h6>Personal Projects<span></span>Astrology</h6>
+				<h4>Scorpio Zodiac Star Sign</h4>
+			</div>
+			<figure class="entry__media">
+				<img src="images/illustration-1.jpg" alt="Scorpio Zodiac Star Sign">
+			</figure>
+		</div>
+		<div class="entry">
+			<div class="entry__meta">
+				<h6>Personal Projects<span></span>Dogs</h6>
+				<h4>Festive Puppy Dog</h4>
+			</div>
+			<figure class="entry__media">
+				<img src="images/illustration-2.jpg" alt="Festive Puppy Dog">
+			</figure>
+		</div>
+		<div class="entry">
+			<div class="entry__meta">
+				<h6>Client Projects<span></span>Kumiko</h6>
+				<h4>People wearing traditional robes on a Japanese city street</h4>
+			</div>
+			<figure class="entry__media">
+				<img src="images/illustration-3.jpg" alt="People wearing traditional robes on a Japanese city street">
+			</figure>
+		</div>
+	</section>
+
+	<footer>
+		<h6>Illustration is my passion</h6>
+
+		<div class="footer__content">
+			<h2>Let's create something amazing together</h2>
+			<button class="btn">
+				Tell me about your project
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none">
+					<path d="M21.5 12H3.5M17.5 8L21.5 12L17.5 8ZM21.5 12L17.5 16L21.5 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</button>
+			<ul class="social-links">
+				<li><a href="#">FB</a></li>
+				<li><a href="#">IG</a></li>
+				<li><a href="#">LI</a></li>
+				<li><a href="#">X</a></li>
+				<li><a href="#">YT</a></li>
+			</ul>
+		</div>
+
+		<p>&copy; 2023 Adi Purdila. All rights reserved.</p>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+	<script>
+		// Air
+	</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #6 || Cool accordion</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+
+	<style>
+		/* This design is inspired by Zed Dash's project */
+		/* https://codepen.io/z-/pen/OBPJKK */
+		:root {
+			--def-transition-duration: .2s;
+
+			--color-cloudy: #5F7C9C;
+			--color-cloudy-shade: #56708c;
+
+			--color-sunny: #3F7ABC;
+			--color-sunny-shade: #396ea9;
+
+			--color-rainy: #26323E;
+			--color-rainy-shade: #222d38;
+
+			--color-thunderstorms: #101C29;
+			--color-thunderstorms-shade: #0e1925;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			line-height: 120%;
+		}
+
+		img {
+			display: block;
+		}
+
+		#hero {
+			background: linear-gradient(to bottom, #151618 64%, white 36%);
+			color: white;
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+		}
+
+		#hero ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		#main-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 3rem 5rem;
+		}
+
+		#main-header ul {
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+		}
+
+		#main-header a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 0.8125rem;
+		}
+
+		#page-title {
+			width: 80%;
+			margin: 0 auto;
+			color: #ECEFF1;
+			text-align: center;
+		}
+
+		#page-title p {
+			font-size: 1.5625rem;
+			font-weight: 200;
+		}
+
+		#page-title h1 {
+			font-size: 3.0625rem;
+			font-weight: 700;
+		}
+
+		#hero .accordion {
+			width: 100%;
+			margin: 0 4rem;
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.accordion--item p {
+			margin: 0;
+		}
+
+		.cloudy {
+			background: var(--color-cloudy) url(/images/cloudy@c.png);
+		}
+
+		.cloudy .readings li {
+			background-color: var(--color-cloudy-shade);
+		}
+
+		.sunny {
+			background: var(--color-sunny) url(images/sunny@c.png);
+		}
+
+		.sunny .readings li {
+			background-color: var(--color-sunny-shade);
+		}
+
+		.rainy {
+			background: var(--color-rainy) url(images/rainy@c.png);
+		}
+
+		.rainy .readings li {
+			background-color: var(--color-rainy-shade);
+		}
+
+		.thunderstorms {
+			background: var(--color-thunderstorms) url(images/thunderstorms@c.png);
+		}
+
+		.thunderstorms .readings li {
+			background-color: var(--color-thunderstorms-shade);
+		}
+
+		.accordion--item {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 200%;
+			border-radius: 1rem;
+			padding: 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			min-height: 30rem;
+			flex: 0 0 10rem;
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.date li:nth-child(1) {
+			font-size: 1.125rem;
+			margin-bottom: .5rem;
+		}
+
+		.date li:nth-child(2) {
+			font-size: 0.8125rem;
+		}
+
+		.temp {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			opacity: 0;
+		}
+
+		.temp p {
+			font-size: 2.1875rem;
+			font-weight: 200;
+			margin-bottom: .5rem;
+		}
+
+		.temp--values {
+			display: flex;
+			align-items: baseline;
+			gap: .5rem;
+			font-size: 1.125rem;
+			font-weight: 700;
+		}
+
+		.temp--values li:nth-child(2) {
+			color: rgba(255, 255, 255, 0.48);
+		}
+
+		.temp .temp--values li:nth-child(1) {
+			font-size: 2.1875rem;
+		}
+
+		.temp .temp--values li:nth-child(2) {
+			font-size: 1.5625rem;
+		}
+
+		.readings {
+			display: flex;
+			gap: 1rem;
+			width: 28rem;
+			opacity: 0;
+		}
+
+		.readings li {
+			border-radius: .75rem;
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: .5rem;
+			width: 100%;
+			text-align: center;
+		}
+
+		.readings li p:nth-of-type(1) {
+			font-size: 0.8125rem;
+			font-weight: 700;
+		}
+
+		.readings li p:nth-of-type(2) {
+			font-size: 0.8125rem;
+			color: rgba(255, 255, 255, 0.48);
+		}
+
+		.bottom-temp {
+			position: absolute;
+			bottom: 2rem;
+		}
+
+		.opened {
+			background-size: 32rem;
+			flex-basis: 32rem;
+			cursor: auto;
+		}
+
+		.opened .date li:nth-child(2) {
+			color: rgba(255, 255, 255, 0.48);
+		}
+
+		.opened .temp,
+		.opened .readings {
+			opacity: 1;
+		}
+
+		.opened .bottom-temp {
+			opacity: 0;
+		}
+
+
+		/* Air */
+		/* In the video I'm using the following icons and imagery: */
+		/* - https://elements.envato.com/photo-realistic-weather-icon-set-K7MGJ3 */
+		/* - https://elements.envato.com/weather-icon-pack-3UHW3R3 */
+	</style>
+</head>
+<body>
+	<div id="hero">
+		<header id="main-header">
+			<a href="/"><img src="images/logo-nomad.svg" alt="Logo"></a>
+			<nav>
+				<ul>
+					<li><a href="#">Destinations</a></li>
+					<li><a href="#">Travel Styles</a></li>
+					<li><a href="#">Stories</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div id="page-title">
+			<p>Explore Weather Forecasts</p>
+			<h1>New York City</h1>
+		</div>
+
+		<ul class="accordion"></ul>
+
+		<ul class="accordion">
+			<li class="accordion--item cloudy opened">
+				<ul class="date">
+					<li>Tue</li>
+					<li>12 Apr</li>
+				</ul>
+				<div class="temp">
+					<p>Cloudy</p>
+					<ul class="temp--values">
+						<li>24°</li>
+						<li>16°</li>
+					</ul>
+				</div>
+				<ul class="readings">
+					<li>
+						<img src="icons/icon-wind@c.svg" alt="Wind">
+						<p>23 km/h</p>
+						<p>Wind</p>
+					</li>
+					<li>
+						<img src="icons/icon-humidity@c.svg" alt="Humidity">
+						<p>29%</p>
+						<p>Humidity</p>
+					</li>
+					<li>
+						<img src="icons/icon-rain@c.svg" alt="Rain">
+						<p>8%</p>
+						<p>Rain</p>
+					</li>
+				</ul>
+				<ul class="bottom-temp temp--values">
+					<li>24°</li>
+					<li>16°</li>
+				</ul>
+			</li>
+			<li class="accordion--item sunny">
+				<ul class="date">
+					<li>Wed</li>
+					<li>13 Apr</li>
+				</ul>
+				<div class="temp">
+					<p>Sunny</p>
+					<ul class="temp--values">
+						<li>25°</li>
+						<li>13°</li>
+					</ul>
+				</div>
+				<ul class="readings">
+					<li>
+						<img src="icons/icon-wind@c.svg" alt="Wind">
+						<p>13 km/h</p>
+						<p>Wind</p>
+					</li>
+					<li>
+						<img src="icons/icon-humidity@c.svg" alt="Humidity">
+						<p>25%</p>
+						<p>Humidity</p>
+					</li>
+					<li>
+						<img src="icons/icon-rain@c.svg" alt="Rain">
+						<p>2%</p>
+						<p>Rain</p>
+					</li>
+				</ul>
+				<ul class="bottom-temp temp--values">
+					<li>25°</li>
+					<li>13°</li>
+				</ul>
+			</li>
+			<li class="accordion--item rainy">
+				<ul class="date">
+					<li>Thu</li>
+					<li>14 Apr</li>
+				</ul>
+				<div class="temp">
+					<p>Rainy</p>
+					<ul class="temp--values">
+						<li>19°</li>
+						<li>11°</li>
+					</ul>
+				</div>
+				<ul class="readings">
+					<li>
+						<img src="icons/icon-wind@c.svg" alt="Wind">
+						<p>7 km/h</p>
+						<p>Wind</p>
+					</li>
+					<li>
+						<img src="icons/icon-humidity@c.svg" alt="Humidity">
+						<p>56%</p>
+						<p>Humidity</p>
+					</li>
+					<li>
+						<img src="icons/icon-rain@c.svg" alt="Rain">
+						<p>67%</p>
+						<p>Rain</p>
+					</li>
+				</ul>
+				<ul class="bottom-temp temp--values">
+					<li>19°</li>
+					<li>11°</li>
+				</ul>
+			</li>
+			<li class="accordion--item thunderstorms">
+				<ul class="date">
+					<li>Fri</li>
+					<li>15 Apr</li>
+				</ul>
+				<div class="temp">
+					<p>Thunderstorms</p>
+					<ul class="temp--values">
+						<li>23°</li>
+						<li>12°</li>
+					</ul>
+				</div>
+				<ul class="readings">
+					<li>
+						<img src="icons/icon-wind@c.svg" alt="Wind">
+						<p>34 km/h</p>
+						<p>Wind</p>
+					</li>
+					<li>
+						<img src="icons/icon-humidity@c.svg" alt="Humidity">
+						<p>49%</p>
+						<p>Humidity</p>
+					</li>
+					<li>
+						<img src="icons/icon-rain@c.svg" alt="Rain">
+						<p>22%</p>
+						<p>Rain</p>
+					</li>
+				</ul>
+				<ul class="bottom-temp temp--values">
+					<li>23°</li>
+					<li>12°</li>
+				</ul>
+			</li>
+			<li class="accordion--item sunny">
+				<ul class="date">
+					<li>Sat</li>
+					<li>16 Apr</li>
+				</ul>
+				<div class="temp">
+					<p>Sunny</p>
+					<ul class="temp--values">
+						<li>29°</li>
+						<li>20°</li>
+					</ul>
+				</div>
+				<ul class="readings">
+					<li>
+						<img src="icons/icon-wind@c.svg" alt="Wind">
+						<p>10 km/h</p>
+						<p>Wind</p>
+					</li>
+					<li>
+						<img src="icons/icon-humidity@c.svg" alt="Humidity">
+						<p>21%</p>
+						<p>Humidity</p>
+					</li>
+					<li>
+						<img src="icons/icon-rain@c.svg" alt="Rain">
+						<p>0%</p>
+						<p>Rain</p>
+					</li>
+				</ul>
+				<ul class="bottom-temp temp--values">
+					<li>29°</li>
+					<li>20°</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		let accordionsItems = document.querySelectorAll('.accordion li')
+
+		accordionsItems.forEach(item => {
+			item.addEventListener('click', () => {
+				accordionsItems.forEach(item => {
+					item.classList.remove('opened')
+				})
+
+				item.classList.add('opened')
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #11 || Animated Lottie icon</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		html {
+			font-size: 16px;
+			font-family: 'Figtree', sans-serif;
+			line-height: 1.5;
+		}
+
+		img {
+			display: block;
+		}
+
+		#hero {
+			height: 60vh;
+			color: white;
+			position: relative;
+		}
+
+		#hero::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: rgba(15, 21, 37, .8);
+			z-index: -1;
+		}
+
+		.container {
+			width: 80%;
+			margin: 0 auto;
+			height: 100%;
+			padding: 4rem 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			gap: 3rem;
+		}
+
+		nav ul a {
+			text-decoration: none;
+			color: white;
+		}
+
+		h1 {
+			font-size: 4.875rem;
+			font-weight: 700;
+			max-width: 80%;
+			line-height: 1.2;
+		}
+
+		h1 span {
+			color: #FFBF1A;
+		}
+
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;
+		}
+	</style>
+</head>
+<body>
+	<section id="hero">
+		<div class="container">
+			<video autoplay muted loop>
+				<source src="videos/video-2@c.mp4" type="video/mp4">
+			</video>
+
+			<header>
+				<a href="/"><img src="images/logo-l3.svg" alt="Logo"></a>
+
+				<nav>
+					<ul>
+						<li><a href="#">Work</a></li>
+						<li><a href="#">Company</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<h1>Crafting <span>digital masterpieces</span> with pixel-perfect precision.</h1>
+
+			<!-- Air -->
+		</div>
+	</section>
+</body>
+</html>

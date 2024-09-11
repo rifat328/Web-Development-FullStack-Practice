@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #19 || Parallax animation</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--primary: #0B0036;
+			--primary-tint-10: #23194a;
+			--primary-tint-20: #3C335E;
+			--primary-shade-20: #09002b;
+			--secondary: #F2B279;
+			--white: #fff;
+			--white-80: rgba(255, 255, 255, .8);
+			--white-16: rgba(255, 255, 255, .16);
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Lato', sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			background-color: var(--primary);
+			color: var(--white-80);
+		}
+
+		a {
+			color: var(--white);
+			text-decoration: none;
+			display: inline-block;
+			transition: color .2s ease-in-out;
+		}
+
+		a:hover {
+			color: var(--secondary);
+		}
+
+		img {
+			display: block;
+			max-width: 100%;
+		}
+
+		h1,
+		h2 {
+			font-family: 'Cormorant Unicase', serif;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+
+		h1 {
+			font-size: 4rem;
+			margin: 0 0 3rem;
+			color: var(--secondary);
+		}
+
+		h2 {
+			font-size: 2rem;
+			margin: 0 0 2rem;
+		}
+
+		#hero {
+			background: url('illustrations/wolves@c.svg') top center no-repeat;
+			background-size: cover;
+			min-height: 100dvh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 4rem 4rem;
+		}
+
+		#main-header {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 4rem;
+		}
+
+		#main-header nav {
+			display: flex;
+			align-items: center;
+			gap: 4rem;
+		}
+
+		#main-header nav ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		#main-header nav a {
+			font-size: 0.875rem;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+
+		button {
+			appearance: none;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			padding: 0;
+		}
+
+		#menu-button svg rect {
+			transition: all .2s ease-in-out;
+		}
+
+		#menu-button svg path {
+			transition: all .2s ease-in-out;
+		}
+
+		#menu-button:hover svg rect {
+			fill: var(--secondary);
+			fill-opacity: 1;
+		}
+
+		#menu-button:hover svg path {
+			fill: var(--primary);
+		}
+
+		#stories {
+			padding: 8rem;
+		}
+
+		#stories header {
+			text-align: center;
+			max-width: 64%;
+			margin: 0 auto 8rem;
+		}
+
+		p.lead {
+			font-style: normal;
+			font-size: 1.5rem;
+			font-weight: 300;
+			color: var(--white-80);
+			margin: 0;
+		}
+
+		.divider {
+			height: 1px;
+			width: 10rem;
+			background-color: var(--white-16);
+			margin: 0 auto 3rem;
+		}
+
+		.story-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+		}
+
+		.story {
+			padding: 8rem 4rem;
+			border-radius: 0.25rem;
+			background-color: var(--primary-tint-10);
+			box-shadow: 16px 16px 0px 0px var(--primary-shade-20);
+		}
+
+		.story p {
+			font-size: 1.125rem;
+			margin-bottom: 2rem;
+			color: var(--white-80);
+		}
+
+		.story a {
+			padding: 1rem 2rem;
+			border-radius: 6.25rem;
+			border: 1px solid var(--secondary);
+			color: var(--secondary);
+			transition: all .2s ease-in-out;
+		}
+
+		.story a:hover {
+			background-color: var(--secondary);
+			color: var(--primary);
+		}
+
+		/* Lenis recommended CSS */
+		html.lenis {
+			height: auto;
+		}
+
+		.lenis.lenis-smooth {
+			scroll-behavior: auto;
+		}
+
+		.lenis.lenis-smooth [data-lenis-prevent] {
+			overscroll-behavior: contain;
+		}
+
+		.lenis.lenis-stopped {
+			overflow: hidden;
+		}
+
+		.lenis.lenis-scrolling iframe {
+			pointer-events: none;
+		}
+
+		/* Air */
+	</style>
+</head>
+<body>
+	<section id="hero">
+		<!-- Air -->
+		<!-- End Air -->
+
+		<header id="main-header">
+			<a href="/"><img src="images/logo-ww.svg" alt="Logo"></a>
+
+			<nav>
+				<ul>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Sign up</a></li>
+				</ul>
+
+				<button id="menu-button">
+					<svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+						<rect width="40" height="40" rx="20" fill="white" fill-opacity="0.1"/>
+						<path d="M12.9719 16H25C25.5531 16 26 15.5531 26 15C26 14.4469 25.5531 14 25 14H12.9719C12.4478 14 12 14.4478 12 14.9719C12 15.4959 12.4478 16 12.9719 16ZM27 19H14.9719C14.4478 19 14 19.4469 14 20C14 20.5531 14.4478 21 14.9719 21H26.9719C27.5531 21 28 20.5531 28 20C28 19.4469 27.5531 19 27 19ZM25 24H12.9719C12.4478 24 12 24.4469 12 24.9719C12 25.4969 12.4478 26 12.9719 26H25C25.5531 26 26 25.5531 26 25C26 24.4469 25.5531 24 25 24Z" fill="white" fill-opacity="0.6"/>
+					</svg>
+				</button>
+			</nav>
+		</header>
+
+		<svg width="40" height="56" viewBox="0 0 40 56" fill="none">
+			<rect x="0.5" y="0.5" width="39" height="55" rx="19.5" stroke="#BF5E3B"/>
+			<path d="M20 37V19M24 33L20 37L24 33ZM20 37L16 33L20 37Z" stroke="#BF5E3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</section>
+
+	<section id="stories">
+		<header>
+			<h1>Embark on a journey into the heart of nature.</h1>
+			<div class="divider"></div>
+			<p class="lead">From the howls of wolves under the moonlit sky to the ancient secrets of the mountains and valleys, explore stories that bring the wilderness to life.</p>
+		</header>
+
+		<div class="story-list">
+			<div class="story">
+				<h2>The Howl of the Midnight Wolf</h2>
+				<p>In the heart of the dense forest, where the moonlight barely touches the ground, a lone wolf's howl pierces the night. It is said that this is no ordinary wolf, but a guardian of ancient secrets, calling out to those brave enough to uncover the mysteries of the wilderness...</p>
+				<a href="#">Read Full Story</a>
+			</div>
+			<div class="story">
+				<h2>Whispers of the Forgotten Valley</h2>
+				<p>Nestled between towering peaks lies a valley shrouded in mist and legend. Travelers speak of voices carried on the wind, a language not spoken by any living creature. These whispers tell tales of a time when the earth was young and nature's magic flowed freely...</p>
+				<a href="#">Read Full Story</a>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+	<script>
+		// Air
+		// End Air
+
+		// Lenis - smooth scrolling
+		const lenis = new Lenis()
+
+		lenis.on('scroll', ScrollTrigger.update)
+
+		gsap.ticker.add((time) => {
+			lenis.raf(time * 1000)
+		})
+
+		gsap.ticker.lagSmoothing(0)
+	</script>
+</body>
+</html>

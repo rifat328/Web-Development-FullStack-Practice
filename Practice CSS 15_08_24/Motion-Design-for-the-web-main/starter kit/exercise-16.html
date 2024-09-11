@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise #16 || Typewriter effect</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--gray-100: #262626;
+			--gray-80: #515151;
+			--secondary: #DAA25A;
+			--accent: #59ABD9;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Quicksand', sans-serif;
+			line-height: 1.2;
+		}
+
+		body {
+			color: var(--gray-100);
+		}
+
+		p,
+		a {
+			letter-spacing: -0.32px;
+		}
+
+		h1 {
+			font-size: 5.625rem;
+			text-align: center;
+			font-weight: 700;
+			letter-spacing: -3.6px;
+		}
+
+		.button {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			gap: .5rem;
+			color: var(--accent);
+			text-decoration: none;
+			font-weight: 700;
+			transition: .2s ease-in-out;
+		}
+
+		.button:hover {
+			gap: 1rem;
+			color: var(--gray-100);
+		}
+
+		.button:hover svg {
+			fill: var(--gray-100);
+		}
+
+		.button svg {
+			fill: var(--accent);
+			transition: fill .2s ease-in-out;
+		}
+
+		#our-work {
+			color: var(--gray-80);
+			text-align: center;
+		}
+
+		#our-work svg {
+			fill: var(--gray-80);
+		}
+
+		#our-work p {
+			margin-bottom: .5rem;
+		}
+
+		#hero {
+			display: flex;
+			flex-direction: column;
+			height: 100dvh;
+			justify-content: space-between;
+			padding: 4rem;
+		}
+
+		header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.header-side-content {
+			flex: 1;
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		.header-side-content:last-child {
+			justify-content: flex-end;
+		}
+
+		nav ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: var(--gray-100);
+			transition: color .2s ease-in-out;
+		}
+
+		nav a:hover {
+			color: var(--secondary);
+		}
+
+		h1 span {
+			color: var(--secondary);
+		}
+
+		/* Air */
+	</style>
+</head>
+<body>
+	<section id="hero">
+		<header>
+			<div class="header-side-content">
+				<a href="/"><img src="images/logo-cc.svg" alt="Logo"></a>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+
+			<div class="header-side-content">
+				<a href="" class="button">
+					Start a Project
+					<svg width="12" height="12" viewBox="0 0 12 12">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M7.28033 0.96967C6.98744 0.676777 6.51256 0.676777 6.21967 0.96967C5.92678 1.26256 5.92678 1.73744 6.21967 2.03033L9.43934 5.25H1.5C1.08579 5.25 0.75 5.58579 0.75 6C0.75 6.41421 1.08579 6.75 1.5 6.75H9.43934L6.21967 9.96967C5.92678 10.2626 5.92678 10.7374 6.21967 11.0303C6.51256 11.3232 6.98744 11.3232 7.28033 11.0303L11.7803 6.53033C12.0732 6.23744 12.0732 5.76256 11.7803 5.46967L7.28033 0.96967Z"/>
+					</svg>
+				</a>
+			</div>
+		</header>
+
+		<!-- Air -->
+		<h1>Shaping Visions into Reality with <span>Boldness</span></h1>
+		<!-- End Air -->
+
+		<div id="our-work">
+			<p>Our Work</p>
+			<svg width="12" height="12" viewBox="0 0 12 12">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0303 6.53033C11.3232 6.23744 11.3232 5.76256 11.0303 5.46967C10.7374 5.17678 10.2626 5.17678 9.96967 5.46967L6.75 8.68934L6.75 0.75C6.75 0.335786 6.41421 -2.11379e-07 6 -2.29485e-07C5.58579 -2.47591e-07 5.25 0.335786 5.25 0.75L5.25 8.68934L2.03033 5.46967C1.73744 5.17678 1.26256 5.17678 0.96967 5.46967C0.676777 5.76256 0.676777 6.23744 0.96967 6.53033L5.46967 11.0303C5.76256 11.3232 6.23744 11.3232 6.53033 11.0303L11.0303 6.53033Z"/>
+			</svg>
+		</div>
+	</section>
+
+	<!-- Air -->
+</body>
+</html>
