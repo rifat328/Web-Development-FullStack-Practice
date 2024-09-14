@@ -1,0 +1,26 @@
+Grid Placement:
+    Container: contain all the items
+    grid tracks: create row and column and these are collectively known as tracks, row traks /column cracks. 
+    grid cells: intersection of these Tracks known as cell.can create grid items using multiple cells. 
+    grid lines: control this line using grid gap, these ceperate our tracks
+
+by default a grid will contain as much as vertical space as content .
+
+ now lets see an example:
+    <div cleass="container">
+        <div cleass="item Cowboy"> </div >  
+        <div cleass="item astronaut"> </div >  
+        <div cleass="item book"> </div >  
+    </div >  
+
+    CSS:
+    .container{
+        height:100vh;
+        display:grid;
+        grid-template-column: 1fr 1fr 1.5fr;
+        grid-template-row: 1fr 1fr;
+        gap:3rem; will make the gap bigger,
+
+    }
+
+    
