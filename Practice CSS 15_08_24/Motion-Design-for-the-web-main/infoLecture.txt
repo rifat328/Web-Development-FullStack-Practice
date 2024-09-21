@@ -1,0 +1,16 @@
+CSS Transition is not CSS animation ,
+     its only do the change between one state to another 
+     nothing in between. like an arrow initial to target \
+
+applying transition in css is done by using 
+Transition Property, transition duration,transition timing function,
+transition-delay
+
+in short it can be written as :
+     transition: transition-property transition-duration transition-timing-function transition-delay
+                    color                   400ms or 0.4s           ease-in-out         1s
+    
+
+you can add multiple transition by using , between them 
+
+transition : all       will do the transition for all but it must be avoided to resolve performence eror.
