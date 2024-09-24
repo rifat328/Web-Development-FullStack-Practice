@@ -6,3 +6,5 @@ function humanAge( dogAge){
 
 humanAge(dogAge); //? call
 
+// https://stanford.edu/~cpiech/karel/ide.html   exercise 
+
