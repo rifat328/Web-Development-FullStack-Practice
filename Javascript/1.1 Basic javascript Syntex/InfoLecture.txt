@@ -1,0 +1,6 @@
+Code Writing Principal --best practices
+    Repo: https://github.com/rwaldron/idiomatic.js#naming
+
+
+
+
