@@ -1,0 +1,62 @@
+
+Web Design:
+	3 sec rule to convince people
+color Theory:
+	 aware of the mood of our color palate
+	dominant color tells a story set the right vibe.
+	picking colors on what message i am trying to convey tr my 	users.
+
+[Red: Love, Energy, Intensity] [Yellow: joy, Intellect, Attention]
+[Green: Freshness, Safety, Growth][Blue: Stability, Trust, Serenity]
+[Purple: Royalty, Wealth, Femininity]
+
+Combing Colors: 
+ Scientific way : 
+	picking color palate next to Each other Called 
+	Analogous Colors , these looks harmonious and look good  together 
+good for navigation bar & body of website / logo and its background 
+but these doesn't pop out 
+complementary Colors :
+for design to pop out we need complementary Colors :
+color plate that are opposite spectrum of each other 
+Don't try complementary colors on text , its looks jarring / fuzzy
+
+make sure color is consistent and convey the message. 
+
+Typography / Font:
+    Fonts also matter for right mood and message \
+    Serif is inspired marvel carving .
+    looks more serious, authoratative , old traditional ,Stable etc 
+
+    san-serif is diferent family  it convays frendly highly readable
+    sticking at most 2 fonts at one design 
+        sticking to similar mood
+        match time era. 
+        have opposite serif ness 
+        ALSO you can change the weight to make it interesting
+
+User Interface Design:
+    stablish heigherercy
+     color pop out has heigh heigherercy
+     size: bigger attrect More Attention
+     Layout :  make more interesting
+     line length : to long / to short is herd to read aim for 40-60 char per line
+     have right alignment , reduce the numbher of alignment point  like a line that design follow
+     White-Space: injecting white space is better , sems less clatter 
+     Audience: intend for right Audience.
+      right design language for right audience 
+
+User Experience Design:
+    make good Experience for users
+    simplicity: do not clutter , easy to use/ understand.
+    consistency: design and functionality consistent
+    Account peoples reading pattern , common reading pattern is F Pattern / Z pattern for faster read and video
+    All Platfrom Design: Design for different size devices
+    dont make content so big and so small.
+    Don't use your Power of Evil:
+        patterns for user behave differently.
+        like deceving users/ tricking users/ make it harder
+        confusing Warding
+        
+
+
