@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradientButton</title>
+    
+</head>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg);
+    font-family: var(--font-family);
+}
+
+:root {
+    --font-family: 'Karla', sans-serif;
+    --body-bg: #1E1F25;
+    --btn-bg: #000;
+    --btn-color: #cbcbcb;
+    --btn-color-hover: #fff;
+    --grad-color1: #eeaf61;
+    --grad-color2: #fb9062;
+    --grad-color3: #ee5d6c;
+    --grad-color4: #ce4993;
+    --grad-color5: #6a0d83;
+}
+    .container{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnCover{
+        padding: 0.1rem;
+        background: linear-gradient(115deg,#eeaf61, #fb9062,#ee5d6c,#ce4993,#6a0d83);
+        border-radius: 0.2rem;
+        transition: background 400ms ease-out 2s;  /* not working !! why??*/ 
+    }
+    .btn{
+        
+        padding: 0.5rem 1rem;
+        border-radius: 0.2rem;
+        /* border:0.2rem solid linear-gradient(115deg,#eeaf61, #fb9062,#ee5d6c,#ce4993,#6a0d83); */
+        border:none;
+        font-weight: bold;
+        font-size: 1rem;
+        color: var(--btn-color);
+        background-color:var(--btn-bg);
+        letter-spacing: 0.05rem;
+        font-family:inherit;
+
+        transition: color 400ms ease-out 200ms, padding 600 ease-out 200ms;
+
+    }
+    .btn:hover{
+        color: var(--btn-color-hover);
+        padding: .7rem 1.2rem;
+
+    }
+    .btnCover:hover{
+        background: linear-gradient(230deg,#eeaf61, #fb9062,#ee5d6c,#ce4993,#6a0d83);
+        
+
+    }
+
+</style>
+<body>
+    <!-- Structure -->
+     <div class="container">
+        <div class="btnCover">
+            <!-- <input type="button"> -->
+            <button class='btn' value="">Start Coding!</button>
+        </div>
+     </div>
+</body>
+</html>
