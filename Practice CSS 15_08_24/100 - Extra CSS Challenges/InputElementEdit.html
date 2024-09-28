@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Element</title>
+    <title>Search Box</title>
     <style>
         html, body{
             padding: 0%;
@@ -34,7 +34,7 @@
              border: 1px solid var(--search-border);
              transition: width 300ms linear;
         }
-        .search-bar:focus,.outerLayer{
+        .search-bar:focus{
             width: 100%;
             border-color: var(--search-focus-border);
            
@@ -45,7 +45,7 @@
         }
 
         .search-bar:focus::placeholder{
-            color: transparent;
+            color: transparent; 
         }
         .hide
         {
