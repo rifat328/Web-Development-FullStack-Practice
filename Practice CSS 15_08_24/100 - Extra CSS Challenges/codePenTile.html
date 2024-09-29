@@ -3,22 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;900&display=swap" rel="stylesheet">
     <title>CodePenTile</title>
     <style>
+                /* Colors 
+        body background: #131417
+        tile background: #1e1f26 
+        username: #b7bbc8
+        card stats background: #131417
+        */
 
+        :root {
+        --font-main: 'Noto Sans', sans-serif;
+            --bg-main: #131417;
+            --bg-card: #1e1f26;
+            --bg-stats: #131417;
+            --username: #b7bbc8;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: var(--bg-main);
+            font-family: var(--font-main);
+        }
+        p,h3{
+            padding: 0%;
+            margin: 0%;
+        }
+        ul{
+            padding-left: 0%;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        .card{
+            max-width: 300px;
+            background: var(--bg-card);
+            margin: auto;
+            margin-top: 10rem;
+            padding: 1em;
+        }
+        .card-thumbnail img{
+            max-width: 100%;
+            object-fit: cover;
+            
+        }
+        .card-avatar img{
+            /* max-width: 50px;
+            max-height: 50px; */
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        .card, img{
+            border-radius: 10px;
+        }
+        .card-body{
+            display: flex;
+            margin-top: 1em;
+        }
+        .card-details h3{
+            font-weight: 900;
+            font-size: 1rem;
+        }
+        .card-details p{
+            font-size: .85rem;
+            color: var(--username);
+        }
+        .card-stats{
+            display: none;
+            padding-bottom: .5rem;
+           /*  transition: all 1s ease 1s;  transition dosent work */
+            
+        }
+        .card-stats li{
+            background: var(--bg-main);
+            border-radius: 5px;
+            padding: 0.25rem .5rem;
+            margin-right: .5rem;
+            
+        }
+         .card:hover   .card-stats{ /* on card hover activate card-stats */
+            display: flex;
+            
+        }
+        .card:hover{
+            padding-bottom: 0%;
+        }
+
+     /* Another approach with smooth transition */
+        /* .card-stats {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease; /* Apply transition to opacity and height 
+            }
+
+        .card-stats li {
+            background: var(--bg-main);
+            border-radius: 5px;
+            padding: 0.25rem .5rem;
+            margin-right: .5rem;
+        }
+
+        .card:hover .card-stats {
+            opacity: 1;
+            height: auto;
+        } */
+       
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="codePenTile">
-            <img class="projectImage" src="" alt="">
-            
-            <div class="profile">
-                <img class="userImage" src="" alt="">
-                <p class="projectName">Code Pin Tile Card</p>
-                <p class="userName">Rifat Hossain</p>
+    <div class="card">
+        <div class="card-thumbnail">
+            <img alt="" src="./src/image/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg "/>
+        </div>
+        <div class="card-body">
+            <div class="card-avatar">
+                <img alt="" src="./src/image/ben-den-engelsen-zNWlX5Sw9a4-unsplash.jpg"/>
+            </div>
+            <div class="card-details">
+                <h3>Abstract Gradient Project</h3>
+                <p>Scrimsbee McScrimslee</p>
             </div>
         </div>
-    </div>   
+        <ul class="card-stats">
+            <li>🤍 8</li>
+            <li>💬 32</li>
+        </ul> 
+    </div>  
 </body>
 </html>
