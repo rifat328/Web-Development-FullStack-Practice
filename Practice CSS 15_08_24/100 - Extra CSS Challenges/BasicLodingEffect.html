@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Loding Effect 1</title>
+    <style>
+        :root{
+            --circle-color-0:rgb(0, 0, 0);
+            --circle-color-25:rgba(0, 0, 0, 0.75);
+            --circle-color-50:rgba(0, 0, 0, 0.50);
+            --circle-color-75:rgba(0, 0, 0, 0.25);
+            --circle-color-100:rgba(0, 0, 0, 0);
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            
+        }
+        .circle-1,.circle-2,.circle-3{
+            
+                max-width: 100px;
+                width: 100px;
+                height: 100px;
+                background: var(--circle-color-0);
+                border-radius: 50%;
+                animation-name: loading;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                
+        }
+        @keyframes loading {
+            0% {background-color: var(--circle-color-0); width: 10%;}
+            25% {background-color: var(--circle-color-25); width: 25%;}
+            50% {background-color: var(--circle-color-50); width: 50%;}
+            75% {background-color: var(--circle-color-75); width: 75%;}
+            100% {background-color: var(--circle-color-100); width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+    </div>
+</body>
+</html>
