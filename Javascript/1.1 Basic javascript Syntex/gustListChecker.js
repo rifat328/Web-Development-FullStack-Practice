@@ -6,5 +6,5 @@ function guestListChacker(name){
         alert("You Are Invited :: Congratulation");
     }else alert("!! Sorry Not Invited");
 }
-
+ //arr.push(), arr.pop()
 guestListChacker(userInput);
