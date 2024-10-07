@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Navigation</title>
+    <style>
+        h1{
+            display: flex;
+            justify-content: center;
+            /*  Dosent work : liner gradient on color property:
+
+            color: linear-gradient(red, yellow, blue);
+            text-decoration-color: linear-gradient(red, yellow, blue);
+            text-decoration: linear-gradient(red, yellow, blue);
+            text-shadow: linear-gradient(red, yellow, blue);
+            text-rendering: linear-gradient(red, yellow, blue); */
+        }
+        button:active{
+            color:red;
+            font-weight: bold;
+        }
+        .list{
+            list-style: none;
+            padding: 5px 0.5rem;
+            
+            font-weight: bold;
+            a{
+                color: wheat;
+                text-decoration: none;
+                /* wanted to change color of  outer edge of the text */
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <input type="checkbox">
+    <button style="font-weight: bold; padding: 0.5rem 1rem; border: none; border-radius: 5px;">Click Me</button>    
+    <ul>
+        <li class="list"><a href="https://www.google.com/">Google</a></li>
+        <li class="list"><a href="https://www.microsoft.com/en-us/">MicroSoft</a> </li>
+        <li class="list"><a href="https://www.amazon.com/">Amazone</a></li>
+    </ul>
+    <script>
+        var lastElementChild= document.firstElementChild.lastElementChild;
+        var firstElementChildOfFirst=document.firstElementChild.firstElementChild;
+        let checkBoxClick=document.querySelector("input").click(); //search and select element
+        let changeTextOfHeading=document.firstElementChild.querySelector("h1").innerHTML="Good Bye";
+        document.firstElementChild.querySelector("h1").style.color="red";
+        document.firstElementChild.querySelector("ul").lastElementChild.lastElementChild.innerHTML="Bangla Vai .com";
+
+    </script>
+</body>
+</html>
