@@ -32,6 +32,9 @@
             }
 
         }
+        .btn-huge{
+            font-size: 5rem;
+        }
     </style>
 </head>
 <body>
@@ -52,8 +55,13 @@
         document.firstElementChild.querySelector("ul").lastElementChild.lastElementChild.innerHTML="Bangla Vai .com";
         
         document.getElementsByTagName("li")[0].style.color="red";
+        document.querySelectorAll("li.list a")[1].style.color="green";
+        document.querySelectorAll("li a")[1].style.color="blue";
+        document.querySelector("button").style.backgroundColor="yellow";
+        document.querySelector("button").classList.add("btn-huge");
+        document.querySelector("button").classList.remove("btn-huge");
+        document.querySelector("button").classList.toggle("btn-huge");
 
-        
     </script>
 </body>
 </html>
