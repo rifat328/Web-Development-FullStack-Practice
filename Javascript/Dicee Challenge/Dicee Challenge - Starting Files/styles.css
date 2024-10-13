@@ -28,7 +28,13 @@ p {
   color: #4ECCA3;
   font-family: 'Indie Flower', cursive;
 }
-
+h3{
+  margin: auto;
+  text-align: center;
+  color: #4ECCA3;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+}
 img {
   width: 80%;
 }
