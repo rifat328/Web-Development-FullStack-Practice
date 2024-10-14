@@ -79,3 +79,15 @@ footer {
   margin: 10px;
   background-color: white;
 }
+a{
+  text-decoration: none;
+  color: aliceblue;
+  text-shadow: #DA0463 0 4px 4px;
+  font-size: 1.2rem;
+}
+span{
+  text-decoration: none;
+    color: aliceblue;
+    text-shadow: #DA0463 0 4px 4px;
+    font-size: 1.2rem;
+}
