@@ -17,31 +17,42 @@ footer {
 }
 
 .w {
-
+  background: url("./images/tom1.png");
+  object-fit: cover;
+  /* background-repeat: no-repeat;
+  background-position: center; */
+    
+   
 }
 
 .a {
-
+  background: url("./images/tom2.png");
+    object-fit: cover;
 }
 
 .s {
-
+  background: url("./images/tom3.png");
+    object-fit: cover;
 }
 
 .d {
-
+  background: url("./images/tom4.png");
+    object-fit: cover;
 }
 
 .j {
-
+  background: url("./images/snare.png");
+    object-fit: cover;
 }
 
 .k {
-
+  background: url("./images/crash.png");
+    object-fit: cover;
 }
 
 .l {
-
+  background: url("./images/kick.png");
+    object-fit: cover;
 }
 
 .set {
