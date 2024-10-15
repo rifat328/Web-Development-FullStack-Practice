@@ -89,6 +89,11 @@ footer {
   text-align: center;
   margin: 10px;
   background-color: white;
+  transition: border 200ms ease-in-out;
+}
+.drum:hover{
+  border:10px solid rgba(36, 33, 39, 0.939);
+  
 }
 a{
   text-decoration: none;

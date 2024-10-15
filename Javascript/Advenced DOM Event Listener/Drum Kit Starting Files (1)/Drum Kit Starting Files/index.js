@@ -3,8 +3,20 @@ for(let i=0;i<=6;i++){
 
     document.querySelectorAll("button")[i].addEventListener("click",function(){
         this.style.color="white";
+       let buttonClicked= this.innerHTML;
+       makeSound(buttonClicked);
 
-        switch (this.innerHTML) {
+    })
+}
+
+document.addEventListener("keypress",function(event){
+    makeSound(event.key);
+});
+
+
+function makeSound(key){
+    
+        switch (key) {
             case "w":
                     var tom1= new Audio("sounds/tom-1.mp3");
                     tom1.play();
@@ -44,10 +56,4 @@ for(let i=0;i<=6;i++){
                     this.style.color="#DA0463";
                 break;
         }
-
-    })
 }
-
-
-
-
