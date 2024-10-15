@@ -5,12 +5,14 @@ for(let i=0;i<=6;i++){
         this.style.color="white";
        let buttonClicked= this.innerHTML;
        makeSound(buttonClicked);
+       buttonAnimation(buttonClicked);
 
     })
 }
 
 document.addEventListener("keypress",function(event){
     makeSound(event.key);
+    buttonAnimation(event.key);
 });
 
 
@@ -56,4 +58,9 @@ function makeSound(key){
                     this.style.color="#DA0463";
                 break;
         }
+}
+function buttonAnimation(currentKey){
+    let button = document.querySelector("."+currentKey);
+    button.classList.add("pressed");
+    
 }
