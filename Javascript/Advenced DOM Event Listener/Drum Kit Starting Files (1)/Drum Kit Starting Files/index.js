@@ -2,7 +2,7 @@ var arr=['w','a','s','d','j','k','l'];
 for(let i=0;i<=6;i++){
 
     document.querySelectorAll("button")[i].addEventListener("click",function(){
-        this.style.color="white";
+        
        let buttonClicked= this.innerHTML;
        makeSound(buttonClicked);
        buttonAnimation(buttonClicked);
@@ -62,5 +62,10 @@ function makeSound(key){
 function buttonAnimation(currentKey){
     let button = document.querySelector("."+currentKey);
     button.classList.add("pressed");
+   button.style.color="white";
     
+    setTimeout(function(){
+        button.classList.remove("pressed");
+        button.style.color="#DA0463";
+    }, 100);
 }
