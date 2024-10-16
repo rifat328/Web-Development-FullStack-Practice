@@ -1,0 +1,4 @@
+                React
+Component: each component behave as a html element , and react works with its seperate DOM ,
+            no repetative Design works.
+            
