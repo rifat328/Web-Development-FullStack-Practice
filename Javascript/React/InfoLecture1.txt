@@ -7,3 +7,5 @@ Component: each component behave as a html element , and react works with its se
 
 browser base Developer Environment : codesandbox.io
 
+JSX--> here every body has a mendatory div with a id of root and react accece that .
+        place html element into body
