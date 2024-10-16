@@ -1,4 +1,9 @@
                 React
 Component: each component behave as a html element , and react works with its seperate DOM ,
             no repetative Design works.
-            
+        each component jas small amount of its own html css and javascript
+    react can compaire changes and on its DOM tree and re render its changes                   
+
+
+browser base Developer Environment : codesandbox.io
+
