@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 const name = "Rifat";
+const lastName="Hossain";
 const myLuckyNumber = 3;
 
 ReactDOM.render(
   <div>
-    <h1>Hello {name}!</h1>
+    <h1>Hello {name  + " " + lastName}!</h1>
     <p>My Lucky Number is {myLuckyNumber}</p>
     <p>My Lucky Random Number is {Math.floor(Math.random() * 10 + 1)}</p>
   </div>,
