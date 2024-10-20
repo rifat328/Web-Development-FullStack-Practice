@@ -9,7 +9,7 @@ for(let i=0;i<=6;i++){
 
     })
 }
-
+//here event is a call back object
 document.addEventListener("keypress",function(event){
     makeSound(event.key);
     buttonAnimation(event.key);
