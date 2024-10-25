@@ -5,8 +5,13 @@ console.log("Hello world with Node");
 // to enter type node 
 // to exit type .exit or ctrl + c twice
 
-import superheroes  from 'superheroes';
-import {randomSuperhero} from 'superheroes';
-let superheoname=randomSuperhero();
+import * as  superheroes  from 'superheroes';
 
-console.log(superheoname);
+import supervillains from 'supervillains';
+
+ import {randomSupervillain} from 'supervillains';
+// let superheoname=superheroes.randomSuperhero();
+ let supervillainss= randomSupervillain();
+// console.log(superheoname);
+console.log(supervillainss);
+//console.log(supervillains);
