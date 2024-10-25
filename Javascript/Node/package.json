@@ -1,0 +1,15 @@
+{
+  "name": "nodenpm",
+  "version": "1.0.0",
+  "description": "this is a entry to node project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rifat Hossain",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^1.0.0"
+  }
+}
