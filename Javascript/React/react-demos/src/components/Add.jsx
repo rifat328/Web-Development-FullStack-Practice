@@ -9,6 +9,7 @@ const Add = () => {
             <li>FalFala </li>
             <li>Chicken </li>
             <li>Smoked Grilled Chicken </li>
+            <li>Biryani </li>
 
         </ul>
 
