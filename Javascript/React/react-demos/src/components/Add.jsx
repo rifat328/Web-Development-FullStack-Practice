@@ -10,7 +10,7 @@ const Add = () => {
             <li>Chicken </li>
             <li>Smoked Grilled Chicken </li>
             <li>Biryani </li>
-
+            <li>Khabsa </li>
         </ul>
 
     </div>
