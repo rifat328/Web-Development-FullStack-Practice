@@ -55,7 +55,7 @@ function makeSound(key){
                     
                 break;
             default: console.log("no key Registared");
-                    this.style.color="#DA0463";
+                    
                 break;
         }
 }
