@@ -6,6 +6,7 @@ import { JSXRules } from "./components/JSXRules";
 import Calculator from "./components/Calculator";
 import Greeting from "./components/Greeting";
 import ProductInfo from "./components/ProductInfo";
+import Lists from "./components/Lists";
 const App =()=>{
 return <div>
     <Header/>
@@ -15,6 +16,8 @@ return <div>
     <Footer/>
     <Greeting/>
     <ProductInfo/>
+    <hr></hr>
+    <Lists/>
 </div>
 
 }
