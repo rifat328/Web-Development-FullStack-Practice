@@ -9,6 +9,10 @@ import ProductInfo from "./components/ProductInfo";
 import Lists from "./components/Lists";
 import UserInfo from "./components/UserInfo";
 import User from "./components/User";
+import Weather from "./components/Weather";
+import UserStatus from "./components/UserStatus";
+import StyledCard from "./components/StyledCard";
+import ProfileCard from "./components/ProfileCard";
 const App =()=>{
 return <div>
     <Header/>
@@ -32,6 +36,11 @@ return <div>
             userClass='VIP'
             userSpending={200000}
     />
+    <hr/>
+    <Weather temperature={27} />
+    <UserStatus loggedIn={true} isAdmin={false}/>
+    <StyledCard/>
+    <ProfileCard/>
 </div>
 
 }
