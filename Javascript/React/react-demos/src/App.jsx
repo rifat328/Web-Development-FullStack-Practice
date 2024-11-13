@@ -41,7 +41,7 @@ return <div>
     <UserStatus loggedIn={true} isAdmin={false}/>
     <StyledCard/>
     <ProfileCard/>
-    //state and hooks 
+    {/*state and hooks*/} 
 </div>
 
 }
