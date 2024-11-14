@@ -13,6 +13,7 @@ import Weather from "./components/Weather";
 import UserStatus from "./components/UserStatus";
 import StyledCard from "./components/StyledCard";
 import ProfileCard from "./components/ProfileCard";
+import StateCounter from "./components/StateCounter";
 const App =()=>{
 return <div>
     <Header/>
@@ -42,6 +43,25 @@ return <div>
     <StyledCard/>
     <ProfileCard/>
     {/*state and hooks*/} 
+    <div className="Topic-State-and-Hook" style={{width: '70%',position:'relative',left:'15%'}}>
+
+        <h1 style={{textAlign:'center' , textShadow:'2px 1px green'}}>State and hooks</h1>
+        <p style={{color:'green',textEmphasis:'double-circle red',scale:'1'}}>
+
+        State is a way to store and manage data that can change over time 
+        and affects how the component renders . we define state using useState Hook 
+        which allows you to set an initial value and provides a way to update that state.
+
+        </p>
+        <hr/>
+        <br/>
+
+    </div>
+    <div className="Counter_using_State">
+        <h2>What is a Hook?</h2>
+        <p>it lets us use state without using classBase components</p>
+        <StateCounter/>
+    </div>
 </div>
 
 }
