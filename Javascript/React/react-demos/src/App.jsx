@@ -14,6 +14,7 @@ import UserStatus from "./components/UserStatus";
 import StyledCard from "./components/StyledCard";
 import ProfileCard from "./components/ProfileCard";
 import StateCounter from "./components/StateCounter";
+import AddFriend from "./components/AddFriend";
 const App =()=>{
 return <div>
     <Header/>
@@ -62,6 +63,7 @@ return <div>
         <p>it lets us use state without using classBase components</p>
         <StateCounter/>
     </div>
+    <AddFriend/>
 </div>
 
 }
