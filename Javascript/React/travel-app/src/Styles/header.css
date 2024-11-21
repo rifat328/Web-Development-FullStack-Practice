@@ -1,0 +1,13 @@
+.Main-content{
+    display: flex;
+    justify-content: center;
+    background-color: #d65151;
+    max-height: 8rem;
+    border-top-left-radius:  1rem;
+    border-top-right-radius: 1rem;
+}
+h1{
+    
+    font-size: 2.6rem;
+   padding-bottom: 0.5rem;
+}
