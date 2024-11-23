@@ -1,11 +1,11 @@
 import React from 'react'
-
+import '../Styles/contacts.css'
 const Contacts = () => {
   return (
     <div className="contacts">
             <article className="contact-card">
                 <img 
-                    src="./images/mr-whiskerson.png"
+                    src="https://picsum.photos/200"
                     alt="Photo of Mr. Whiskerson"
                 />
                 <h3>Mr. Whiskerson</h3>
@@ -27,7 +27,7 @@ const Contacts = () => {
             
             <article className="contact-card">
                 <img 
-                    src="./images/fluffykins.png"
+                    src="https://picsum.photos/200"
                     alt="Photo of Fluffykins"
                 />
                 <h3>Fluffykins</h3>
@@ -49,7 +49,7 @@ const Contacts = () => {
             
             <article className="contact-card">
                 <img 
-                    src="./images/felix.png"
+                    src="https://picsum.photos/200"
                     alt="Photo of Felix"
                 />
                 <h3>Felix</h3>
@@ -71,7 +71,7 @@ const Contacts = () => {
             
             <article className="contact-card">
                 <img 
-                    src="./images/pumpkin.png"
+                    src="https://picsum.photos/200"
                     alt="Photo of Pumpkin"
                 />
                 <h3>Pumpkin</h3>
