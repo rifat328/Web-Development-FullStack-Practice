@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <Header/>
-      <Contacts/>
+      
     </div>
   )
 }
