@@ -12,7 +12,7 @@ const Entry = (props) => {
                 />
             </div>
             <div className="info-container">
-                <FaMapPin/>
+                <FaMapPin className='marker' color='black'/>
                 <span className="country"><strong>{props.country}</strong> </span>
                 <a href={props.googleMapLink}>View on Google Maps</a>
                 <h2 className="entry-title">{props.title}</h2>

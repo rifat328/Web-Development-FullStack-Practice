@@ -37,6 +37,7 @@ article.journal-entry {
 article.journal-entry .marker {
   width: 7px;
   margin-right: 4px;
+  margin-top: 1px;
 }
 
 article.journal-entry .main-image-container {
