@@ -36,3 +36,7 @@ const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
 // Your code here
 
 console.log(pokemon.map((pok)=>'<p>'+pok+'</p>'));
+
+// const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
+
+// console.log(paragraphs)
