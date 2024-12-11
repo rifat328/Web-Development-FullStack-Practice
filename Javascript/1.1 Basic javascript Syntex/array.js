@@ -1,6 +1,6 @@
 let animels = ["Tiger", "Lion", "Chettas", "Wolvs"];
 animels.push("Humming-Bird", "Doyel");
-let Birds=["Humming Bird", "Doyel", "Sparrow","Eagle"];
+let Birds = ["Humming Bird", "Doyel", "Sparrow", "Eagle"];
 console.log(animels);
 animels.pop();
 console.log(animels);
@@ -10,33 +10,52 @@ animels.unshift("Bangol Tiger", "Dog");
 console.log(animels);
 animels.splice(2, 1, "Lion");
 console.log(animels);
-animels.splice(1,1,"Hayenas");
+animels.splice(1, 1, "Hayenas");
 console.log(animels);
 console.log("______---_______---__________--____");
-animels=animels.concat(Birds);
+animels = animels.concat(Birds);
 console.log(animels);
 console.log(animels.at(2));
 console.log("______---_______---__________--____");
-console.log(animels.copyWithin(0, 2 ,4));
+console.log(animels.copyWithin(0, 2, 4));
 //! array map
-const capitalized = names.map(name => name.charAt(0).toUpperCase() + name.slice(1));
+const capitalized = names.map(
+  (name) => name.charAt(0).toUpperCase() + name.slice(1)
+);
 
 console.log(capitalized); // ["Alice", "Bob", "Charlie", "Danielle"]
 
-const nums = [1, 2, 3, 4, 5]
+const nums = [1, 2, 3, 4, 5];
 // -->       [1, 4, 9, 16, 25]
 // Your code here
-const squares = nums.map(function(num) {
-    return num * num
-})
+const squares = nums.map(function (num) {
+  return num * num;
+});
 
-
-const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
+const pokemon = ["Bulbasaur", "Charmander", "Squirtle"];
 // -->          ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 // Your code here
 
-console.log(pokemon.map((pok)=>'<p>'+pok+'</p>'));
+console.log(pokemon.map((pok) => "<p>" + pok + "</p>"));
 
 // const paragraphs = pokemon.map(mon => `<p>${mon}</p>`)
 
 // console.log(paragraphs)
+
+// React component arrey rendering
+//
+export default function App() {
+  /**
+   * Challenge: manually turn this string array into an array of
+   * JSX elements by surrounding each ninja turtle with an <h2> element
+   */
+
+  const ninjaTurtles = ["Donatello", "Michaelangelo", "Rafael", "Leonardo"];
+  return (
+    <main>
+      {ninjaTurtles.map((ninja) => (
+        <h2>{ninja}</h2>
+      ))}
+    </main>
+  );
+}
