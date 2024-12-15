@@ -23,7 +23,7 @@ const Entry = (props) => {
           </div>
 
           <h2 className="entry-title">{props.entry.title}</h2>
-          <p className="trip-dates">{props.entry.date}</p>
+          <p className="trip-dates">{props.entry.dates}</p>
           <p className="entry-text">{props.entry.text}</p>
         </div>
       </article>
