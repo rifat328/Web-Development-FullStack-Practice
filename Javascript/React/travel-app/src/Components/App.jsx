@@ -7,13 +7,12 @@ import data from "../data.js";
 
 const journalEntry = data.map((journal) => (
   <Entry
-    id={journal.id}
-    img={journal.img}
-    title={journal.title}
-    country={journal.country}
-    googleMapsLink={journal.googleMapsLink}
-    dates={journal.dates}
-    text={journal.text}
+    key={journal.id}
+    //passing object to make it less clatter & configure the rest on component to match
+    entry={journal}
+    // one other way of doing it with the spread operator
+    // {...journal}
+    // this will create each prop as the info feeded to it
   />
 ));
 const App = () => {
