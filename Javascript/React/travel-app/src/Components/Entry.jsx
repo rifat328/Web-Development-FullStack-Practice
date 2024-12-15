@@ -12,13 +12,16 @@ const Entry = (props) => {
           />
         </div>
         <div className="info-container">
-          <FaMapPin className="marker" color="black" />
-          <span className="country">
-            <strong>{props.entry.country}</strong>
-          </span>
-          <a href={props.entry.googleMapLink} target="_blank">
-            View on Google Maps
-          </a>
+          <div className="location">
+            <FaMapPin className="marker" size="1rem" color="black" />
+            <span className="country">
+              <strong>{props.entry.country}</strong>
+            </span>
+            <a href={props.entry.googleMapLink} target="_blank">
+              View on Google Maps
+            </a>
+          </div>
+
           <h2 className="entry-title">{props.entry.title}</h2>
           <p className="trip-dates">{props.entry.date}</p>
           <p className="entry-text">{props.entry.text}</p>
