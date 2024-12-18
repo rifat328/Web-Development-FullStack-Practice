@@ -15,6 +15,7 @@ import ProfileCard from "./components/ProfileCard";
 import StateCounter from "./components/StateCounter";
 import AddFriend from "./components/AddFriend";
 import State from "./components/State";
+import ToggleState from "./components/ToggleState";
 const App = () => {
   return (
     <div>
@@ -81,6 +82,7 @@ const App = () => {
       </div>
       <AddFriend />
       <State />
+      <ToggleState />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "../styles/state-counter.css";
 const StateCounter = () => {
   const [count, setCount] = useState(0);
   const incriment = () => setCount(count + 1);
-  const decriment = () => setCount(count - 1);
+  const decriment = () => setCount((previousValu) => previousValu - 1);
   return (
     <main className="container">
       <h1>How many times will Bob say "state" in this section?</h1>
@@ -28,5 +28,5 @@ const StateCounter = () => {
     </main>
   );
 };
-
+// let answer = isGoingOut ? "Yes" : "No" //
 export default StateCounter;
