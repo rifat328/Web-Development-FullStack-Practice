@@ -16,6 +16,7 @@ import StateCounter from "./components/StateCounter";
 import AddFriend from "./components/AddFriend";
 import State from "./components/State";
 import ToggleState from "./components/ToggleState";
+import Exercise1 from "./components/Exercise1";
 const App = () => {
   return (
     <div>
@@ -83,6 +84,7 @@ const App = () => {
       <AddFriend />
       <State />
       <ToggleState />
+      <Exercise1 />
     </div>
   );
 };
