@@ -12,7 +12,7 @@ setTimeout(() => {
 const intervalId = setInterval(() => {
   let date = new Date();
   console.log(
-    date.getSeconds() + ":" + date.getMinutes() + ":" + date.getHours()
+    date.getSeconds() + ":" + date.getMinutes() + ":" + date.getHours() / 2
   );
 }, 1000);
 
