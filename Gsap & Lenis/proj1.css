@@ -1,0 +1,30 @@
+.line {
+    position: fixed;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: transparent;
+    z-index: 2;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    z-index: 1;
+    animation: blip 0.5s infinite alternate;
+}
+
+@keyframes blip {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
