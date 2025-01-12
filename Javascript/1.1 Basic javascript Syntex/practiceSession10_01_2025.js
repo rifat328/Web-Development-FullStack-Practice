@@ -204,3 +204,38 @@ for (let [product, sellingPrice] of Object.entries(products)) {
 
 //JSON.stringify()
 console.log(JSON.stringify(person));
+
+//
+function Phone(company, model, releaseDate, price) {
+  this.companyName = company;
+  this.modelNumber = model;
+  this.releaseDate = releaseDate;
+  this.price = price;
+  this.language = "English"; // default value
+}
+
+const myPhone = new Phone("Apple", "Iphone 15 Pro Max", "2024", "160,000");
+console.log(
+  `My Phone: ${myPhone.companyName} ${myPhone.modelNumber}, Bought at ${myPhone.price} `
+);
+
+console.log(myPhone.language);
+
+myPhone.manufectured = "Singapor";
+console.log(myPhone.manufectured);
+// JavaScript has built-in constructors for all native objects:
+// new Object()   // A new Object object
+// new Array()    // A new Array object
+// new Map()      // A new Map object
+// new Set()      // A new Set object
+// new Date()     // A new Date object
+// new RegExp()   // A new RegExp object
+// new Function() // A new Function object
+
+//! Asynchronous Javascript
+
+setTimeout(myFunction, 3000);
+
+function myFunction() {
+  console.log("I love You !!");
+}
