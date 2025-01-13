@@ -239,3 +239,96 @@ setTimeout(myFunction, 3000);
 function myFunction() {
   console.log("I love You !!");
 }
+
+// You cannot access the Promise properties state and result.
+
+// You must use a Promise method to handle promises.
+// myPromise.then(
+//   function (value) {
+//     /* code if successful */
+//   },
+//   function (error) {
+//     /* code if some error */
+//   }
+// );
+
+// Promise.then() takes two arguments, a callback for success and another for failure.
+// Both are optional, so you can add a callback for success or failure only.
+
+const myDisplayer = (value) => {
+  console.log(`This is myDisplayer function Value: ${value}`);
+};
+
+let myPromise = new Promise(function (resolve, reject) {
+  let x = 1;
+  if (x === 0) {
+    resolve("ok");
+  } else {
+    reject("Error Happend");
+  }
+});
+
+myPromise.then(
+  (value) => {
+    myDisplayer(value);
+  },
+  (error) => {
+    myDisplayer(error);
+  }
+);
+
+async function myFunction() {
+  return "Hello";
+}
+myFunction().then(
+  function (value) {
+    myDisplayer(value);
+  }
+  // ,function(error) {myDisplayer(error);} since i am expecting only one value
+);
+
+//! Await keyword only work inside an async function ,
+//     => async function create and return a promise but
+//     await make a function wait for a function because of that
+//     the await keyworrd makes the function wait for the resolve then
+//     continue with the next set of execution.
+
+//     let value = await promise;
+
+//   async function myDisplay() {
+//   let myPromise = new Promise(function(resolve) {
+//     resolve("I love You !!");
+//   });
+//   document.getElementById("demo").innerHTML = await myPromise;
+//   }
+
+//   myDisplay();
+
+async function myDisplay() {
+  let myPromise = new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve("I love You !!");
+    }, 3000);
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+
+async function getFile() {
+  let myPromise = new Promise(function (resolve) {
+    let req = new XMLHttpRequest();
+    req.open("GET", "mycar.html");
+    req.onload = function () {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+getFile();
