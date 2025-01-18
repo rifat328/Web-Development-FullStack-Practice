@@ -33,3 +33,153 @@ from the roadmap object. This is because the javascript object's prototype is se
 the roadmap object using the Object.setPrototypeOf() method. In the javascript object,
  the getRoadmapUrl() method is not found, so JavaScript looks up the prototype chain and
   finds the getRoadmapUrl() method in the roadmap object
+
+The IIFE (Immediately Invoked Function Expression)
+ is a JavaScript function that runs as soon as it is defined.
+ (function(){
+    console.log("hello World");
+ })();
+
+ The IIFE is frequently used to create a new scope to avoid 
+ variable hoisting from within blocks.
+ (function () {
+  var roadmap = 'JavaScript';
+  console.log(roadmap);
+})();
+
+console.log(roadmap); // ReferenceError: name is not defined
+
+Inheritance is a way to create a new Class from an existing Class.
+ The new Class inherits all the properties and methods from the
+  existing Class. The new Class is called the child Class, 
+  and the existing Class is called the parent Class.
+  class Roadmap {
+  constructor(name, description, slug) {
+    this.name = name;
+    this.description = description;
+    this.slug = slug;
+  }
+
+  getRoadmapUrl() {
+    console.log(`https://roadmap.sh/${this.slug}`);
+  }
+}
+
+class JavaScript extends Roadmap {
+  constructor(name, description, slug) {
+    super(name, description, slug);
+  }
+
+  greet() {
+    console.log(`${this.name} - ${this.description}`);
+  }
+}
+
+const js = new JavaScript(
+  'JavaScript Roadmap',
+  'Learn JavaScript',
+  'javascript'
+);
+
+js.getRoadmapUrl(); // https://roadmap.sh/javascript
+js.greet(); // JavaScript Roadmap - Learn JavaScript
+In the above example, the JavaScript class inherits the getRoadmapUrl() method from the Roadmap class. 
+This is because the JavaScript class extends the Roadmap class
+ using the extends keyword. In the JavaScript class, the 
+ getRoadmapUrl() method is not found, so JavaScript looks up 
+ the prototype chain and finds the getRoadmapUrl() method in 
+ the Roadmap class.
+
+Map is another data structure in JavaScript 
+which is similar to Object but the key can be of any type.
+ It is a collection of elements where each element is stored as a
+  Key, value pair.
+ It is also known as a Hash table or a dictionary.
+ The key can be of any type but the value can be of any type. 
+ The key is unique and immutable, whereas the value can be mutable
+  or immutable.
+
+const roadmap = new Map();
+roadmap.set('name', 'JavaScript');
+roadmap.set('type', 'dynamic');
+roadmap.set('year', 1995);
+
+console.log(roadmap.get('name')); // JavaScript
+
+roadmap.delete('year');
+console.log(roadmap.has('year')); // false
+console.log(roadmap.size); // 2
+
+roadmap.clear();
+console.log(roadmap.size); // 0
+
+Set is another data structure in JavaScript which is similar to Array but the values are unique. It is a collection of elements
+ where each element is stored as a value without any keys.
+ const roadmap = new Set();
+roadmap.add('JavaScript');
+roadmap.add('JavaScript');
+
+roadmap.add('dynamic');
+roadmap.add(1995);
+
+console.log(roadmap.size); // 3, because the value 'JavaScript' is already present in the set
+console.log(roadmap.has('JavaScript')); // true
+
+roadmap.delete('JavaScript');
+console.log(roadmap.has('JavaScript')); // false
+console.log(roadmap.size); // 2
+
+There are serveral ways to find unique values in an array. Here are some of them:
+    Using Set:
+    const roadmaps = ['JavaScript', 'React', 'Node.js', 'Node.js', 'JavaScript'];
+const uniqueRoadmaps = [...new Set(roadmaps)];
+console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
+
+    Using filter():
+    const roadmaps = ['JavaScript', 'React', 'Node.js', 'Node.js', 'JavaScript'];
+    const uniqueRoadmaps = roadmaps.filter(
+    (roadmap, index) => roadmaps.indexOf(roadmap) === index
+    );
+    console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
+-------------------------------------------------------------
+    Using reduce()
+    const roadmaps = ['JavaScript', 'React', 'Node.js', 'Node.js', 'JavaScript'];
+    const uniqueRoadmaps = roadmaps.reduce((unique, roadmap) => {
+    return unique.includes(roadmap) ? unique : [...unique, roadmap];
+    }, []);
+    console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
+--------------------------------------------------------
+    Using forEach()
+    const roadmaps = ['JavaScript', 'React', 'Node.js', 'Node.js', 'JavaScript'];
+    const uniqueRoadmaps = [];
+    roadmaps.forEach((roadmap) => {
+    if (!uniqueRoadmaps.includes(roadmap)) {
+        uniqueRoadmaps.push(roadmap);
+    }
+    });
+    console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
+--------------------------------------------------------------
+    Using for...of
+    const roadmaps = ['JavaScript', 'React', 'Node.js', 'Node.js', 'JavaScript'];
+    const uniqueRoadmaps = [];
+    for (const roadmap of roadmaps) {
+    if (!uniqueRoadmaps.includes(roadmap)) {
+        uniqueRoadmaps.push(roadmap);
+    }
+    }
+    console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
+    ----------------------------------------------------------
+
+# A promise in js represent a value that may not be available
+     yet but will be at some point.
+    Promise provide a way to handle asynchronous operation.
+    offering methods like then(), catch() to register callbacks for success and
+    failure.
+
+# The async/await, introduced in ES2017,
+ provides a more readable and cleaner way to handle asynchronous
+  operations compared to callbacks and promises. 
+  An async function always returns a promise, 
+  and within such a function, you can use await to 
+  pause execution until a promise settles.
+
