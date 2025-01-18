@@ -183,3 +183,144 @@ console.log(uniqueRoadmaps); // ['JavaScript', 'React', 'Node.js']
   and within such a function, you can use await to 
   pause execution until a promise settles.
 
+Callback hell, often referred to as Pyramid of Doom,
+describes a situation in JavaScript where multiple nested
+callbacks become difficult to manage, leading to unreadable and
+unmaintainable code. It often arises when performing multiple
+asynchronous operations that depend on the completion of previous
+operations. The code starts to take on a pyramidal shape due to
+the nesting.
+    callAsync1(function () {
+  callAsync2(function () {
+    callAsync3(function () {
+      callAsync4(function () {
+        callAsync5(function () {
+          // ...
+        });
+      });
+    });
+  });
+});
+    Strategies to avoid callback hell:
+    Developers can address or avoid callback hell by using
+     strategies like modularizing the code into named functions, 
+     using asynchronous control flow libraries, or leveraging modern
+      JavaScript features like Promises and async/await to write more
+       linear,readable asynchronous code.
+       Promise chaining
+       callAsync1()
+        .then(() => callAsync2())
+        .then(() => callAsync3())
+        .then(() => callAsync4())
+        .then(() => callAsync5())
+        .catch((err) => console.error(err));
+    
+    Async/await
+    async function asyncCall() {
+  try {
+    await callAsync1();
+    await callAsync2();
+    await callAsync3();
+    await callAsync4();
+    await callAsync5();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+#Event bubbling is a concept in the Document Object Model (DOM)
+ that describes the way in which events propagate or "bubble up"
+  through the hierarchy of nested elements in the DOM.
+
+When an event, such as a mouse click,
+occurs on a DOM element, the event will be handled by the element
+first, then its parent element, and so on, until the event reaches
+the root element. This behavior is called event bubbling.
+    const parent = document.querySelector('.parent');
+const child = document.querySelector('.child');
+
+// Scenario of clicking on the child element
+parent.addEventListener('click', () => {
+  console.log('Handled Last');
+});
+
+child.addEventListener('click', () => {
+  console.log('Handled First');
+});
+    In the above example, when you click on the child element,
+     the event will be handled by the child element first, 
+     then its parent element, and so on, to the root element 
+     unless you stop the propagation (event.stopPropagation())
+      of the event.
+
+    Event capturing is the first phase of event propagation.
+     In this phase, the event is captured by the outermost element 
+     and propagated to the inner elements. It is also known as 
+     trickling. It is the opposite of event bubbling.
+
+The spread operator in JavaScript is represented by three dots (...)
+. It allows the elements of an array or properties of an object to 
+be expanded or "spread" into individual elements or properties. 
+This can be useful in various contexts, such as when passing 
+elements as function arguments,
+    cloning arrays and objects, or merging arrays and objects.
+    const roadmaps = ['JavaScript', 'React', 'Node.js'];
+    const bestPractices = ['AWS', 'API Security'];
+
+    const resources = [...roadmaps, ...bestPractices];
+    console.log(resources); // ['JavaScript', 'React', 'Node.js', 'AWS', 'API Security']
+
+const roadmap = {
+  name: 'JavaScript',
+  type: 'dynamic',
+};
+
+const roadmapClone = { ...roadmap }; // shallow copy
+console.log(roadmapClone); // { name: 'JavaScript', type: 'dynamic' }
+
+The core difference between Promise.all() and Promise.allSettled()
+ is that Promise.all() rejects immediately if any of the promises 
+ reject whereas Promise.allSettled() waits for all of the promises
+  to settle\(either resolve or reject) and then returns the result.
+
+  Initialize
+  const promise1 = Promise.resolve('Promise 1 resolved');
+  const promise2 = Promise.reject('Promise 2 rejected');
+  Using Promise.all()
+    Promise.all([promise1, promise2])
+  .then((values) => {
+    console.log(values);
+  })
+  .catch((error) => {
+    console.log('An error occurred in Promise.all():', error);
+  });
+
+// Output:
+// An error occurred in Promise.all(): Promise 2 rejected
+    In the above code, the Promise.all() rejects immediately when any of the promise2 rejects.
+
+Using Promise.allSettled()
+Promise.allSettled([promise1, promise2]).then((results) => {
+  results.forEach((result, index) => {
+    if (result.status === 'fulfilled') {
+      console.log(
+        `Promise ${index + 1} was fulfilled with value:`,
+        result.value
+      );
+    } else {
+      console.log(
+        `Promise ${index + 1} was rejected with reason:`,
+        result.reason
+      );
+    }
+  });
+});
+
+// Output:
+// Promise 1 was fulfilled with value: Promise 1 resolved
+// Promise 2 was rejected with reason: Promise 2 rejected
+In the above code, the Promise.allSettled() 
+waits for all of the promises to settle 
+(either resolve or reject) and then returns the result.
+
+
