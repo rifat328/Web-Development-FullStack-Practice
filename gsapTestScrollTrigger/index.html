@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP ScrollTrigger</title>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+    .space {
+    width: 100%;
+    height: 100vh; 
+}
+    .stack{
+        height: 50vh;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+    .active{
+        background-color: orange !important;
+    }
+    .box {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(253, 249, 249, 0.671);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(3, 3, 3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    
+</style>
+</head>
+<body>
+    <div class="frame">
+        <header>
+            <div class="title-pill">ScrollTrigger Playground</div>
+
+        </header>
+        <main class="canvas">
+            <section class="space"></section>
+            <section class="stack">
+                <div class="box"><span>A</span></div>
+            </section>
+            <section class="space"></section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
